@@ -48,9 +48,13 @@ requiera mantenimiento humano periódico está fuera de alcance** por diseño.
 
 ## Rama-deploy
 Repo: `github.com/josepitisuarez/camaravla-web` (público, creado 24/09/2026).
-Rama única `main`. **Todavía no hay deploy conectado**: cuando Cloudflare Pages
-se enganche a `main`, cada push publica → a partir de ese momento, commitear ≠
-publicar, y hay que anotarlo acá.
+Rama única `main`. **⚠️ `main` ES la rama-deploy desde el 24/09/2026:** el
+Worker `camaravla-web` de Cloudflare (cuenta de Pity, id `8708…`) está conectado
+al repo por Git y **cada push a `main` publica el sitio** (build automático con
+`wrangler deploy`, que lee `wrangler.jsonc` y sirve el repo como assets
+estáticos; `.assetsignore` deja afuera docs, scripts y archivos de proyecto).
+Commitear es seguro; **pushear es publicar**. No es un proyecto "Pages": es un
+Worker con Static Assets, que es el camino actual de Cloudflare.
 
 ## Gotchas
 - **El nombre registral no es el de uso.** IPJ: "Cámara de Industria, Producción
@@ -64,6 +68,13 @@ publicar, y hay que anotarlo acá.
 - **El estatuto queda fuera del sitio** por decisión de Pity (24/09/2026).
 - Google Fonts (Inter) se carga desde internet; sin conexión cae a la fuente del
   sistema. Es aceptable.
+- **URLs limpias en producción.** `html_handling: auto-trailing-slash` hace que
+  `/institucional.html` redirija (307) a `/institucional`. Funciona, pero los
+  links internos siguen apuntando a `.html` → un salto extra por clic. ⬜ Pasar
+  los enlaces de `sitio.js` y las páginas a rutas sin extensión cuando se toque
+  la navegación (en local con `servidor-dev.ps1` las rutas sin extensión NO
+  funcionan; habría que enseñárselas al script).
+- URL técnica del Worker: `camaravla-web.jose-suarez-870.workers.dev`.
 - **El dominio anterior `camaradecomerciovla.org.ar`** existió (2020) y está
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
