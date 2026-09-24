@@ -1,0 +1,13 @@
+{
+  // Configuración del Worker "camaravla-web" en Cloudflare.
+  // El Worker no tiene código propio: solo sirve los archivos estáticos del repo
+  // (Workers Static Assets). Lo que NO se publica está en .assetsignore.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "camaravla-web",
+  "compatibility_date": "2026-09-01",
+  "assets": {
+    "directory": "./",
+    "not_found_handling": "404-page",
+    "html_handling": "auto-trailing-slash"
+  }
+}

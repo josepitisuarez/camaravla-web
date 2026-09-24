@@ -1,0 +1,13 @@
+# Lo que NO se sube como archivo público del sitio.
+.git
+.gitignore
+.gitattributes
+.assetsignore
+.env
+.env.*
+node_modules
+docs
+scripts
+CLAUDE.md
+README.md
+wrangler.jsonc
