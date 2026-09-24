@@ -41,7 +41,7 @@
     <div class="pie__grilla">
       <div>
         <div class="pie__logo"><img src="${raiz}assets/img/logo.png" alt=""></div>
-        <p>Entidad gremial empresaria de Villa La Angostura, Neuquén. Fundada en 1979.</p>
+        <p>La casa del sector privado de Villa La Angostura, Neuquén. Fundada en 1979.</p>
         <p><a href="mailto:info@camaravla.org.ar">info@camaravla.org.ar</a></p>
       </div>
       <div>
