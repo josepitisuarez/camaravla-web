@@ -24,12 +24,5 @@ window.NOTICIAS = [
     titulo: "La Cámara pone en marcha el Observatorio Económico de Villa La Angostura",
     resumen: "Cuatro indicadores mensuales —flujo turístico, ocupación, precios y alquileres— con metodología pública, datos abiertos y revisión externa universitaria. Primer boletín: fecha a confirmar.",
     cuerpo: "El OE-VLA publicará el día 10 de cada mes, a fecha fija, a partir de fuentes administrativas verificables. La metodología se publica antes del primer dato."
-  },
-  {
-    id: "ejemplo-noticia-3",
-    fecha: "2026-09-01",
-    etiqueta: "Ejemplo",
-    titulo: "[EJEMPLO] Título de una noticia de la Cámara",
-    resumen: "Esta entrada es un ejemplo para ver cómo se ve la rotativa con tres o más noticias. Se borra antes de publicar el sitio."
   }
 ];

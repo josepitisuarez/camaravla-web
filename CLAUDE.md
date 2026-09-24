@@ -58,7 +58,7 @@ Pages, anotar acá si se conecta a `main`.
 - **Nada del Observatorio se publica con dato inventado.** `valor: null` muestra
   "en preparación". Los `<span class="pendiente">` son datos que Pity no dio
   todavía (horario, teléfono, cuota social): se completan, no se adivinan.
-- **La noticia `ejemplo-noticia-3` se borra antes de publicar.**
+- La noticia de ejemplo se borró el 24/09/2026 antes del primer push.
 - **El estatuto queda fuera del sitio** por decisión de Pity (24/09/2026).
 - Google Fonts (Inter) se carga desde internet; sin conexión cae a la fuente del
   sistema. Es aceptable.
