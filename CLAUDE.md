@@ -47,8 +47,10 @@ requiera mantenimiento humano periódico está fuera de alcance** por diseño.
     de sesión / brújula).
 
 ## Rama-deploy
-Ninguna — el deploy es manual (todavía no hay hosting). Cuando exista Cloudflare
-Pages, anotar acá si se conecta a `main`.
+Repo: `github.com/josepitisuarez/camaravla-web` (público, creado 24/09/2026).
+Rama única `main`. **Todavía no hay deploy conectado**: cuando Cloudflare Pages
+se enganche a `main`, cada push publica → a partir de ese momento, commitear ≠
+publicar, y hay que anotarlo acá.
 
 ## Gotchas
 - **El nombre registral no es el de uso.** IPJ: "Cámara de Industria, Producción
