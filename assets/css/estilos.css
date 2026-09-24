@@ -1,0 +1,186 @@
+/* camaravla.org.ar — hoja de estilos única. Sin framework, a propósito. */
+
+:root {
+  --rojo: #d7262b;          /* rojo del isologo */
+  --rojo-oscuro: #b01c21;
+  --tinta: #1f2a33;         /* gris azulado del texto del logo */
+  --texto: #232a30;
+  --texto-suave: #5b6670;
+  --fondo: #f6f4f0;         /* papel cálido */
+  --blanco: #ffffff;
+  --linea: #e3dfd8;
+  --exito: #2f7d4f;
+  --ancho: 1120px;
+  --radio: 10px;
+  --sombra: 0 6px 24px rgba(31, 42, 51, 0.08);
+  --fuente: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--fuente);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--texto);
+  background: var(--fondo);
+}
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--rojo-oscuro); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--rojo); }
+h1, h2, h3 { color: var(--tinta); line-height: 1.2; margin: 0 0 0.5em; letter-spacing: -0.01em; }
+h1 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 800; }
+h2 { font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 700; }
+h3 { font-size: 1.15rem; font-weight: 700; }
+p { margin: 0 0 1em; }
+.contenedor { width: min(var(--ancho), 100% - 32px); margin-inline: auto; }
+.seccion { padding: 56px 0; }
+.seccion--alt { background: var(--blanco); border-block: 1px solid var(--linea); }
+.antetitulo {
+  display: inline-block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--rojo); margin-bottom: 10px;
+}
+.suave { color: var(--texto-suave); }
+.chico { font-size: 0.9rem; }
+.pendiente {
+  display: inline-block; padding: 1px 8px; border-radius: 6px; font-size: 0.8rem; font-weight: 600;
+  background: #fff3cd; color: #7a5a00; border: 1px solid #f1dd8a; vertical-align: middle;
+}
+
+/* ---------- cabecera ---------- */
+.cabecera {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linea);
+}
+.cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
+.cabecera__logo img { height: 48px; width: auto; }
+.nav { display: flex; align-items: center; gap: 4px; }
+.nav a {
+  color: var(--tinta); text-decoration: none; font-weight: 600; font-size: 0.95rem;
+  padding: 8px 12px; border-radius: 8px;
+}
+.nav a:hover, .nav a[aria-current="page"] { background: var(--fondo); color: var(--rojo-oscuro); }
+.nav .boton { margin-left: 8px; }
+.nav__toggle {
+  display: none; background: none; border: 1px solid var(--linea); border-radius: 8px;
+  padding: 8px 10px; font: inherit; cursor: pointer; color: var(--tinta);
+}
+
+/* ---------- botones ---------- */
+.boton {
+  display: inline-block; padding: 11px 20px; border-radius: 8px; font-weight: 700;
+  text-decoration: none; border: 2px solid var(--rojo); background: var(--rojo); color: #fff !important;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+.boton:hover { background: var(--rojo-oscuro); border-color: var(--rojo-oscuro); transform: translateY(-1px); }
+.boton--fantasma { background: transparent; color: var(--rojo-oscuro) !important; }
+.boton--fantasma:hover { background: var(--rojo); color: #fff !important; }
+
+/* ---------- portada ---------- */
+.portada { padding: 72px 0 56px; }
+.portada__grilla { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
+.portada p.grande { font-size: 1.2rem; color: var(--texto-suave); max-width: 52ch; }
+.portada__acciones { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+.tarjeta-marca {
+  background: var(--tinta); color: #fff; border-radius: var(--radio); padding: 28px; box-shadow: var(--sombra);
+}
+.tarjeta-marca h3 { color: #fff; margin-bottom: 6px; }
+.tarjeta-marca .dato { font-size: 2.2rem; font-weight: 800; line-height: 1; margin: 12px 0 4px; }
+.tarjeta-marca p { color: #cfd6dc; margin: 0; }
+.tarjeta-marca a { color: #fff; }
+
+/* ---------- rotativa de noticias ---------- */
+.rotativa { position: relative; background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); overflow: hidden; box-shadow: var(--sombra); }
+.rotativa__pista { display: flex; transition: transform 0.55s cubic-bezier(.2,.7,.2,1); }
+.rotativa__item { min-width: 100%; display: grid; grid-template-columns: 1fr 1fr; }
+.rotativa__imagen { background: var(--tinta); min-height: 280px; display: grid; place-items: center; color: #9aa6b0; font-weight: 600; }
+.rotativa__imagen img { width: 100%; height: 100%; object-fit: cover; }
+.rotativa__texto { padding: 32px; display: flex; flex-direction: column; justify-content: center; }
+.rotativa__texto h3 { font-size: 1.35rem; }
+.rotativa__meta { font-size: 0.82rem; color: var(--texto-suave); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+.rotativa__meta .etiqueta { color: var(--rojo); }
+.rotativa__controles { position: absolute; right: 16px; bottom: 16px; display: flex; gap: 8px; align-items: center; }
+.rotativa__controles button {
+  width: 34px; height: 34px; border-radius: 50%; border: 1px solid var(--linea); background: #fff; cursor: pointer;
+  font-size: 1rem; color: var(--tinta);
+}
+.rotativa__puntos { position: absolute; left: 16px; bottom: 20px; display: flex; gap: 6px; }
+.rotativa__puntos span { width: 8px; height: 8px; border-radius: 50%; background: #c9cfd4; }
+.rotativa__puntos span.activo { background: var(--rojo); width: 22px; border-radius: 4px; }
+
+/* ---------- grillas y tarjetas ---------- */
+.grilla-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grilla-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.tarjeta {
+  background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); padding: 24px;
+  box-shadow: var(--sombra);
+}
+.tarjeta h3 { margin-top: 6px; }
+.tarjeta .icono { width: 40px; height: 40px; border-radius: 10px; background: #fbe6e7; color: var(--rojo); display: grid; place-items: center; font-weight: 800; }
+.tarjeta--enlace { text-decoration: none; color: inherit; transition: transform 0.12s ease; }
+.tarjeta--enlace:hover { transform: translateY(-2px); color: inherit; }
+
+.indicadores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.indicador { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); padding: 20px; }
+.indicador__nombre { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--texto-suave); font-weight: 700; }
+.indicador__valor { font-size: 2rem; font-weight: 800; color: var(--tinta); margin: 6px 0 2px; }
+.indicador__var { font-size: 0.9rem; font-weight: 600; }
+.indicador__var.sube { color: var(--exito); }
+.indicador__var.baja { color: var(--rojo-oscuro); }
+.indicador__fuente { font-size: 0.78rem; color: var(--texto-suave); margin-top: 8px; }
+
+/* ---------- tablas ---------- */
+table { width: 100%; border-collapse: collapse; background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); overflow: hidden; font-size: 0.95rem; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+th { background: #f1eee8; font-weight: 700; color: var(--tinta); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+tr:last-child td { border-bottom: 0; }
+
+/* ---------- listado de noticias ---------- */
+.noticias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.noticia { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); overflow: hidden; display: flex; flex-direction: column; }
+.noticia__img { aspect-ratio: 16/9; background: var(--tinta); display: grid; place-items: center; color: #9aa6b0; font-weight: 600; }
+.noticia__img img { width: 100%; height: 100%; object-fit: cover; }
+.noticia__cuerpo { padding: 18px 20px 22px; }
+.noticia__cuerpo h3 { font-size: 1.05rem; }
+.noticia__meta { font-size: 0.78rem; color: var(--texto-suave); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; margin-bottom: 6px; }
+
+/* ---------- comisión directiva ---------- */
+.personas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.persona { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); padding: 16px 18px; }
+.persona__cargo { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--rojo); font-weight: 700; }
+.persona__nombre { font-weight: 700; color: var(--tinta); font-size: 1.05rem; }
+
+/* ---------- aviso ---------- */
+.aviso { border-left: 4px solid var(--rojo); background: var(--blanco); padding: 16px 20px; border-radius: 0 var(--radio) var(--radio) 0; }
+
+/* ---------- pie ---------- */
+.pie { background: var(--tinta); color: #cfd6dc; padding: 48px 0 28px; margin-top: 40px; font-size: 0.92rem; }
+.pie a { color: #fff; }
+.pie__grilla { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+.pie h4 { color: #fff; margin: 0 0 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.pie ul { list-style: none; padding: 0; margin: 0; }
+.pie li { margin-bottom: 6px; }
+.pie__legal { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 32px; padding-top: 18px; font-size: 0.8rem; color: #9aa6b0; }
+.pie__logo img { height: 44px; width: auto; filter: brightness(0) invert(1); margin-bottom: 12px; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  .portada__grilla, .grilla-3, .grilla-2, .noticias, .personas, .pie__grilla { grid-template-columns: 1fr 1fr; }
+  .indicadores { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .seccion { padding: 40px 0; }
+  .portada { padding: 40px 0 32px; }
+  .portada__grilla, .grilla-3, .grilla-2, .noticias, .personas, .pie__grilla, .indicadores { grid-template-columns: 1fr; }
+  .rotativa__item { grid-template-columns: 1fr; }
+  .rotativa__imagen { min-height: 180px; }
+  .rotativa__texto { padding: 22px 20px 56px; }
+  .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #fff; border-bottom: 1px solid var(--linea); padding: 10px 16px 16px; }
+  .nav.abierto { display: flex; }
+  .nav .boton { margin: 8px 0 0; text-align: center; }
+  .nav__toggle { display: inline-block; }
+  table { display: block; overflow-x: auto; }
+}

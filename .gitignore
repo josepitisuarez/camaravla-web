@@ -1,0 +1,19 @@
+# Dependencias
+node_modules/
+
+# Entorno / secretos
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# Build / output
+dist/
+*.log
+
+# Windows / editores
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
