@@ -66,6 +66,16 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   todavía (horario, teléfono, cuota social): se completan, no se adivinan.
 - La noticia de ejemplo se borró el 24/09/2026 antes del primer push.
 - **El estatuto queda fuera del sitio** por decisión de Pity (24/09/2026).
+- **Los documentos internos del OE-VLA NO se publican** (Pity, 08/10/2026):
+  el guion y la exposición de la reunión con CIETES (`docs/oe-vla/02-*`,
+  `03-*` y sus PDF) quedaron en la rama local **`docs-cietes-privado`**, fuera
+  de `main`. Como el Worker sirve el repo entero como archivos públicos, **todo
+  lo que entra a `main` queda accesible por URL aunque no esté enlazado**. Lo
+  interno va a `brujula` o a Drive, nunca a este repo. En `main` solo queda
+  `01-metodologia-general-v0.1`, que sí es pública.
+- **Botón "Soy socio"** (08/10/2026) en el menú, la portada y Asociarse →
+  `https://socios.camaravla.org.ar/` (portal del socio, servido por Gestión
+  CCVLA). Es un enlace externo: el sitio no sabe nada de socios.
 - Google Fonts (Inter) se carga desde internet; sin conexión cae a la fuente del
   sistema. Es aceptable.
 - **URLs limpias en producción.** `html_handling: auto-trailing-slash` hace que
