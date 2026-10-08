@@ -27,6 +27,7 @@
     <button class="nav__toggle" aria-expanded="false" aria-controls="nav-principal">Menú</button>
     <nav class="nav" id="nav-principal" aria-label="Principal">
       ${nav}
+      <a class="boton boton--fantasma" href="https://socios.camaravla.org.ar/" title="Portal del socio: cuotas, pagos y beneficios">Soy socio</a>
       <a class="boton" href="${raiz}contacto.html#asociarse">Asociarse</a>
     </nav>
   </div>

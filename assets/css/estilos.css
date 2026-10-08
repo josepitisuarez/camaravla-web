@@ -113,6 +113,7 @@ p { margin: 0 0 1em; }
 /* ---------- grillas y tarjetas ---------- */
 .grilla-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .grilla-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grilla-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .tarjeta {
   background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); padding: 24px;
   box-shadow: var(--sombra);
@@ -167,14 +168,14 @@ tr:last-child td { border-bottom: 0; }
 
 /* ---------- responsive ---------- */
 @media (max-width: 900px) {
-  .portada__grilla, .grilla-3, .grilla-2, .noticias, .personas, .pie__grilla { grid-template-columns: 1fr 1fr; }
+  .portada__grilla, .grilla-3, .grilla-2, .grilla-4, .noticias, .personas, .pie__grilla { grid-template-columns: 1fr 1fr; }
   .indicadores { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
   .seccion { padding: 40px 0; }
   .portada { padding: 40px 0 32px; }
-  .portada__grilla, .grilla-3, .grilla-2, .noticias, .personas, .pie__grilla, .indicadores { grid-template-columns: 1fr; }
+  .portada__grilla, .grilla-3, .grilla-2, .grilla-4, .noticias, .personas, .pie__grilla, .indicadores { grid-template-columns: 1fr; }
   .rotativa__item { grid-template-columns: 1fr; }
   .rotativa__imagen { min-height: 180px; }
   .rotativa__texto { padding: 22px 20px 56px; }
