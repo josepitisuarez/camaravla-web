@@ -17,3 +17,9 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# Documentos internos del OE-VLA: NO se publican (Pity, 08/10/2026). En este repo
+# solo entra la metodología pública; lo demás va a brujula o a Drive.
+docs/oe-vla/*
+!docs/oe-vla/01-metodologia-general-v0.1.html
+!docs/oe-vla/01-metodologia-general-v0.1.md

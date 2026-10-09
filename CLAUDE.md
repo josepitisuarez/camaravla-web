@@ -73,6 +73,16 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   lo que entra a `main` queda accesible por URL aunque no esté enlazado**. Lo
   interno va a `brujula` o a Drive, nunca a este repo. En `main` solo queda
   `01-metodologia-general-v0.1`, que sí es pública.
+- **Volvió a pasar el 08/10 (nota al Decano FaTu, exposición, Word): cuatro
+  commits más apartados a la rama local `docs-fatu-privado`.** Desde el
+  09/10/2026 el `.gitignore` bloquea `docs/oe-vla/*` salvo la metodología
+  pública: lo interno ya no puede entrar por accidente. ⬜ Mover el contenido
+  de `docs-cietes-privado` y `docs-fatu-privado` a Drive y borrar las ramas.
+- **Mapa de socios** (`mapa.html`, 09/10/2026): lee
+  `https://socios.camaravla.org.ar/mapa/establecimientos.json` (CORS abierto,
+  solo lo comercial de socios activos que no se ocultaron) y lo dibuja con
+  Leaflet + OpenStreetMap alojados en `assets/vendor/leaflet` (copiados del
+  sistema). `assets/js/mapa.js` es el mismo script que usa la cocina.
 - **Botón "Soy socio"** (08/10/2026) en el menú, la portada y Asociarse →
   `https://socios.camaravla.org.ar/` (portal del socio, servido por Gestión
   CCVLA). Es un enlace externo: el sitio no sabe nada de socios.
