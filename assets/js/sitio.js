@@ -10,6 +10,7 @@
     ["inicio", "Inicio", "index.html"],
     ["institucional", "Institucional", "institucional.html"],
     ["observatorio", "Observatorio", "observatorio/index.html"],
+    ["mapa", "Mapa", "mapa.html"],
     ["noticias", "Noticias", "noticias.html"],
     ["contacto", "Contacto", "contacto.html"],
   ];

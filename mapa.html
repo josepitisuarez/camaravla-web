@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" data-raiz="./" data-pagina="mapa">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mapa de socios — Cámara de Comercio, Turismo, Industria y Producción de Villa La Angostura</title>
+  <meta name="description" content="Dónde están los comercios, alojamientos y emprendimientos socios de la Cámara de Comercio, Turismo, Industria y Producción de Villa La Angostura.">
+  <link rel="icon" href="assets/img/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+<div data-cabecera></div>
+
+<main>
+  <section class="seccion">
+    <div class="contenedor">
+      <span class="antetitulo">Socios</span>
+      <h1>Mapa de socios</h1>
+      <p class="suave">Comercios, alojamientos y emprendimientos de Villa La Angostura que forman parte de la Cámara. Cada socio ubica su local desde el portal del socio; el mapa se actualiza solo.</p>
+      <div class="mapa__filtros">
+        <label>Rubro <select id="filtro-rubro"><option value="">todos</option></select></label>
+        <label>Buscar <input type="search" id="buscador" placeholder="nombre o domicilio"></label>
+        <span class="suave" id="contador">cargando…</span>
+      </div>
+      <div id="mapa" class="mapa" data-fuente="https://socios.camaravla.org.ar/mapa/establecimientos.json" aria-label="Mapa de socios de la Cámara"></div>
+      <p class="suave" style="font-size:.9rem">¿Sos socio y tu local no aparece? Entrá al <a href="https://socios.camaravla.org.ar/">portal del socio</a> → Mis datos → Ubicar en el mapa. Mapa © colaboradores de <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>.</p>
+    </div>
+  </section>
+</main>
+
+<div data-pie></div>
+<script src="assets/vendor/leaflet/leaflet.js"></script>
+<script src="assets/js/mapa.js"></script>
+<script src="assets/js/sitio.js"></script>
+</body>
+</html>
