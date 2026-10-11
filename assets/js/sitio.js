@@ -65,7 +65,12 @@
     <div class="pie__legal">
       Cámara de Comercio, Turismo, Industria y Producción de Villa La Angostura · Asociación civil inscripta como
       “Cámara de Industria, Producción y Comercio de Villa La Angostura”, Personería Jurídica Decreto N° 1652/1980,
-      Legajo IPJ Neuquén N° 349 · CUIT 30-67296347-4 · © ${anio}
+      Legajo IPJ Neuquén N° 349 · CUIT 30-67296347-4 · Cerro Inacayal 586, Villa La Angostura · © ${anio}
+      <br>
+      <a href="${raiz}legal.html">Aviso legal</a> ·
+      <a href="https://gestion.camaravla.org.ar/legales/privacidad" rel="noopener">Política de privacidad</a> ·
+      <a href="https://socios.camaravla.org.ar/socios/legales/terminos_portal" rel="noopener">Términos del portal del socio</a> ·
+      Datos abiertos del Observatorio bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" rel="noopener">CC BY 4.0</a>
     </div>
   </div>
 </footer>`;
