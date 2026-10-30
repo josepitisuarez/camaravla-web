@@ -50,8 +50,7 @@ function pagina(n) {
   <meta property="article:published_time" content="${n.fecha}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/img/logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/css/estilos.css">
 </head>
 <body>

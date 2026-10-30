@@ -1,9 +1,9 @@
 # Cabeceras que Cloudflare agrega al servir el sitio (Workers Static Assets lee este archivo).
-# Seguridad: sin scripts de terceros salvo el contador de visitas de Cloudflare (Web Analytics, sin cookies) y sin estilos externos salvo Google Fonts; datos solo del sistema de la Cámara;
+# Seguridad: sin scripts de terceros salvo el contador de visitas de Cloudflare (Web Analytics, sin cookies) y sin estilos ni tipografías externas; datos solo del sistema de la Cámara;
 # imágenes propias y mapas de OpenStreetMap; nadie puede meter el sitio en un iframe.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://tile.openstreetmap.org https://*.tile.openstreetmap.org; connect-src 'self' https://gestion.camaravla.org.ar https://socios.camaravla.org.ar https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://tile.openstreetmap.org https://*.tile.openstreetmap.org; connect-src 'self' https://gestion.camaravla.org.ar https://socios.camaravla.org.ar https://cloudflareinsights.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
   Referrer-Policy: strict-origin-when-cross-origin
@@ -22,3 +22,5 @@
   Cache-Control: public, max-age=86400, stale-while-revalidate=604800
 /data/*
   Cache-Control: public, max-age=300, stale-while-revalidate=3600
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -158,8 +158,9 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
 - **Botón "Soy socio"** (08/10/2026) en el menú, la portada y Asociarse →
   `https://socios.camaravla.org.ar/` (portal del socio, servido por Gestión
   CCVLA). Es un enlace externo: el sitio no sabe nada de socios.
-- Google Fonts (Inter) se carga desde internet; sin conexión cae a la fuente del
-  sistema. Es aceptable.
+- **Inter está alojada en `assets/fonts/`** (variable, un archivo por subconjunto,
+  licencia OFL, 30/10/2026): cero pedidos a Google, la CSP no permite
+  tipografías externas. Si se cambia la tipografía, va acá, nunca por enlace.
 - **URLs limpias** (30/10/2026): todos los enlaces internos van sin `.html`
   (`/institucional`, `/noticias/<id>`); `servidor-dev.ps1` también las sirve.
   `/x.html` sigue redirigiendo (307) a `/x` por `auto-trailing-slash`.

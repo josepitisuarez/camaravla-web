@@ -1,0 +1,4 @@
+Inter (variable, v20), de Rasmus Andersson. Licencia SIL Open Font License 1.1.
+Archivos bajados de Google Fonts el 30/10/2026 y alojados acá para que el sitio
+no dependa de Google ni mande la IP de los visitantes a un tercero.
+https://github.com/rsms/inter · https://openfontlicense.org
