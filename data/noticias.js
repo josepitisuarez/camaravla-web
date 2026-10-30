@@ -25,13 +25,13 @@ window.NOTICIAS = [
     fuente: { nombre: "Instagram @camaravla, 28/10/2026", url: "https://www.instagram.com/p/DfCiYSnpIKJ/" }
   },
   {
-    id: "2026-09-estacionalidad-entrevista",
-    fecha: "2026-09-25",
-    etiqueta: "Entrevista",
-    titulo: "Estacionalidad: meses difíciles para el comercio antes del verano",
-    resumen: "José Alberto Suárez anticipó un período complejo para comercios y servicios tras una temporada invernal que arrancó tarde, y describió el problema como estructural.",
-    cuerpo: "Entre las causas mencionó la retracción del consumo, el aumento de costos de las pymes, la desaceleración de la construcción, el peso de los alquileres comerciales, la presión impositiva y los costos logísticos. Sostuvo que el pueblo no está preparado para un turismo masivo y volvió sobre la necesidad de actualizar la Carta Orgánica municipal, con un ente con autonomía presupuestaria, política y técnica. La nota completa, con las declaraciones textuales, está en La Angostura Digital.",
-    imagen: "assets/img/noticias/2026-09-estacionalidad-entrevista.jpg",
-    fuente: {"nombre":"La Angostura Digital, 25/09/2026","url":"https://www.laangosturadigital.com.ar/2026/09/25/jose-suarez-advirtio-por-la-estacionalidad-van-a-ser-meses-muy-complejos-para-el-comercio/"}
+    id: "2026-10-sorteo-dia-de-la-madre",
+    fecha: "2026-10-27",
+    etiqueta: "Comunidad",
+    titulo: "Entregamos los premios del sorteo por el Día de la Madre",
+    resumen: "Terminamos de entregar las órdenes de compra a las ganadoras del sorteo por el Día de la Madre. Pueden elegir entre los comercios adheridos para un nuevo regalo.",
+    cuerpo: "Felicitaciones a las ganadoras, que ya tienen sus órdenes de compra para usar en cualquiera de los comercios adheridos al sorteo. Gracias nuevamente a quienes participaron y a los comercios que se sumaron a esta iniciativa. ¡Hasta la próxima!",
+    imagen: "assets/img/noticias/2026-10-sorteo-dia-de-la-madre.jpg",
+    fuente: { nombre: "Instagram @camaravla, 27/10/2026", url: "https://www.instagram.com/p/DfAIQZ-pSAW/" }
   }
 ];

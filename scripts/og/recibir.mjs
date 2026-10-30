@@ -5,8 +5,7 @@ import { writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const DESTINO = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'assets', 'img', 'og');
-mkdirSync(DESTINO, { recursive: true });
+const RAIZ_IMG = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'assets', 'img');
 
 createServer((req, res) => {
   res.setHeader('access-control-allow-origin', '*');
@@ -16,13 +15,17 @@ createServer((req, res) => {
   const url = new URL(req.url, 'http://localhost');
   if (req.method !== 'POST' || url.pathname !== '/guardar') { res.statusCode = 404; return res.end('no'); }
   const archivo = String(url.searchParams.get('archivo') ?? '').replace(/[^a-z0-9-]/g, '');
+  const carpeta = String(url.searchParams.get('carpeta') ?? 'og').replace(/[^a-z]/g, '') || 'og';
+  const ext = url.searchParams.get('ext') === 'jpg' ? 'jpg' : 'png';
   if (!archivo) { res.statusCode = 400; return res.end('falta archivo'); }
+  const DESTINO = join(RAIZ_IMG, carpeta);
+  mkdirSync(DESTINO, { recursive: true });
   const partes = [];
   req.on('data', (p) => partes.push(p));
   req.on('end', () => {
     const bytes = Buffer.concat(partes);
-    writeFileSync(join(DESTINO, `${archivo}.png`), bytes);
-    console.log(`guardada ${archivo}.png (${bytes.length} bytes)`);
-    res.end(`ok ${archivo}.png ${bytes.length}`);
+    writeFileSync(join(DESTINO, `${archivo}.${ext}`), bytes);
+    console.log(`guardada ${carpeta}/${archivo}.${ext} (${bytes.length} bytes)`);
+    res.end(`ok ${carpeta}/${archivo}.${ext} ${bytes.length}`);
   });
 }).listen(3999, '127.0.0.1', () => console.log('recibiendo tarjetas en http://localhost:3999/guardar'));
