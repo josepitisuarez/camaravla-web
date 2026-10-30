@@ -60,11 +60,11 @@ function pagina(n) {
 <main>
   <article class="seccion">
     <div class="contenedor" style="max-width:820px">
-      <p class="chico suave" style="margin-bottom:6px"><a href="../noticias.html">← Noticias</a></p>
+      <p class="chico suave" style="margin-bottom:6px"><a href="../noticias">← Noticias</a></p>
       <span class="antetitulo">${escapar(n.etiqueta || 'Noticia')} · ${fechaLarga(n.fecha)}</span>
       <h1>${escapar(n.titulo)}</h1>
       <p class="grande">${escapar(n.resumen)}</p>
-      <img src="../${escapar(imagen)}" alt="" style="width:100%;height:auto;border-radius:10px;margin:18px 0 22px;border:1px solid var(--linea)">
+      <img src="../${escapar(imagen)}" alt="" decoding="async" style="width:100%;height:auto;border-radius:10px;margin:18px 0 22px;border:1px solid var(--linea)">
       ${n.cuerpo ? `<p>${escapar(n.cuerpo)}</p>` : ''}
       ${fuentes.length ? `<p class="chico suave">${fuentes.length > 1 ? 'Fuentes' : 'Fuente'}: ${fuentes.map((f) => `<a href="${escapar(f.url)}" rel="noopener" target="_blank">${escapar(f.nombre)}</a>`).join(' · ')}</p>` : ''}
       <p class="chico suave" style="margin-top:28px">Compartí esta nota: <span class="mono">${url}</span></p>
@@ -84,5 +84,14 @@ mkdirSync(carpeta, { recursive: true });
 // Se borran las páginas de noticias que ya no existen en el archivo de datos.
 for (const archivo of readdirSync(carpeta)) if (archivo.endsWith('.html') && !noticias.some((n) => `${n.id}.html` === archivo)) unlinkSync(join(carpeta, archivo));
 for (const n of noticias) writeFileSync(join(carpeta, `${n.id}.html`), pagina(n), 'utf8');
-console.log(`${noticias.length} páginas de noticias generadas en noticias/`);
+// Mapa del sitio: páginas fijas públicas más una entrada por noticia (mapa y legal quedan fuera a propósito).
+const FIJAS = ['', 'institucional', 'capacitaciones', 'noticias', 'contacto'];
+const hoy = new Date().toISOString().slice(0, 10);
+const urls = [...FIJAS.map((p) => ({ loc: `${SITIO}/${p}`, lastmod: hoy })), ...noticias.map((n) => ({ loc: `${SITIO}/noticias/${n.id}`, lastmod: n.fecha }))];
+writeFileSync(join(RAIZ, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map((u) => `  <url><loc>${u.loc}</loc><lastmod>${u.lastmod}</lastmod></url>`).join('\n')}
+</urlset>
+`, 'utf8');
+console.log(`${noticias.length} páginas de noticias generadas en noticias/ · sitemap.xml con ${urls.length} direcciones`);
 for (const n of noticias) if (imagenDe(n) === IMAGEN_POR_DEFECTO) console.log(`  sin imagen propia: ${n.id} (usa la de la Cámara)`);

@@ -21,6 +21,8 @@ try {
     if ($ruta.EndsWith("/")) { $ruta += "index.html" }
     $archivo = Join-Path $raiz ($ruta.TrimStart("/") -replace "/", "\")
     $completo = [IO.Path]::GetFullPath($archivo)
+    # Direcciones sin extensión, como en producción: /institucional sirve institucional.html
+    if (-not (Test-Path $completo -PathType Leaf) -and (Test-Path ($completo + ".html") -PathType Leaf)) { $completo = $completo + ".html" }
     if ($completo.StartsWith($raiz) -and (Test-Path $completo -PathType Leaf)) {
       $bytes = [IO.File]::ReadAllBytes($completo)
       $ext = [IO.Path]::GetExtension($completo).ToLower()

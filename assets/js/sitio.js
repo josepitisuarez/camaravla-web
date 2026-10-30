@@ -7,11 +7,11 @@
   const pagina = document.documentElement.getAttribute("data-pagina") || "";
 
   const enlaces = [
-    ["inicio", "Inicio", "index.html"],
-    ["institucional", "Institucional", "institucional.html"],
-    ["capacitaciones", "Capacitaciones", "capacitaciones.html"],
-    ["noticias", "Noticias", "noticias.html"],
-    ["contacto", "Contacto", "contacto.html"],
+    ["inicio", "Inicio", ""],
+    ["institucional", "Institucional", "institucional"],
+    ["capacitaciones", "Capacitaciones", "capacitaciones"],
+    ["noticias", "Noticias", "noticias"],
+    ["contacto", "Contacto", "contacto"],
   ];
 
   function cabecera() {
@@ -21,14 +21,14 @@
     return `
 <header class="cabecera">
   <div class="contenedor cabecera__fila">
-    <a class="cabecera__logo" href="${raiz}index.html" aria-label="Cámara de Comercio, Turismo, Industria y Producción de Villa La Angostura — inicio">
+    <a class="cabecera__logo" href="${raiz}" aria-label="Cámara de Comercio, Turismo, Industria y Producción de Villa La Angostura — inicio">
       <img src="${raiz}assets/img/logo.png" alt="Cámara de Comercio, Turismo, Industria y Producción — Villa La Angostura">
     </a>
     <button class="nav__toggle" aria-expanded="false" aria-controls="nav-principal">Menú</button>
     <nav class="nav" id="nav-principal" aria-label="Principal">
       ${nav}
       <a class="boton boton--fantasma" href="https://socios.camaravla.org.ar/" title="Portal del socio: cuotas, pagos y beneficios">Soy socio</a>
-      <a class="boton" href="${raiz}contacto.html#asociarse">Asociarse</a>
+      <a class="boton" href="${raiz}contacto#asociarse">Asociarse</a>
     </nav>
   </div>
 </header>`;
@@ -49,7 +49,7 @@
         <h4>Secciones</h4>
         <ul>
           ${enlaces.map(([, txt, href]) => `<li><a href="${raiz}${href}">${txt}</a></li>`).join("")}
-          <li><a href="${raiz}contacto.html#asociarse">Asociarse</a></li>
+          <li><a href="${raiz}contacto#asociarse">Asociarse</a></li>
         </ul>
       </div>
       <div>
@@ -66,7 +66,7 @@
       “Cámara de Industria, Producción y Comercio de Villa La Angostura”, Personería Jurídica Decreto N° 1652/1980,
       Legajo IPJ Neuquén N° 349 · CUIT 30-67296347-4 · Cerro Inacayal 586, Villa La Angostura · © ${anio}
       <br>
-      <a href="${raiz}legal.html">Aviso legal</a> ·
+      <a href="${raiz}legal">Aviso legal</a> ·
       <a href="https://gestion.camaravla.org.ar/legales/privacidad" rel="noopener">Política de privacidad</a> ·
       <a href="https://socios.camaravla.org.ar/socios/legales/terminos_portal" rel="noopener">Términos del portal del socio</a>
     </div>
@@ -92,6 +92,7 @@
     rotativa();
     listadoNoticias();
     franjaDolar();
+    respaldoImagenes();
   });
 
   /* ---------- utilidades ---------- */
@@ -116,7 +117,7 @@
   // Imagen de la noticia: la propia, o la tarjeta generada para ella (scripts/og), o la de la Cámara.
   function imagenHTML(n, claseImg, alt) {
     const src = n.imagen || `assets/img/og/noticia-${n.id}.png`;
-    return `<img src="${raiz}${escapar(src)}" alt="${escapar(alt || "")}" loading="lazy" onerror="this.onerror=null;this.src='${raiz}assets/img/og/camara.png'">`;
+    return `<img src="${raiz}${escapar(src)}" alt="${escapar(alt || "")}" loading="lazy" decoding="async" data-respaldo="${raiz}assets/img/og/camara.png">`;
   }
 
   /* ---------- rotativa del inicio: últimas 5, avanza sola cada 6 s ---------- */
@@ -135,7 +136,7 @@
               <div class="rotativa__meta"><span class="etiqueta">${escapar(n.etiqueta || "Noticia")}</span> · ${fechaLarga(n.fecha)}</div>
               <h3>${escapar(n.titulo)}</h3>
               <p>${escapar(n.resumen)}</p>
-              <p><a href="${raiz}noticias/${escapar(n.id)}.html">Leer más</a></p>
+              <p><a href="${raiz}noticias/${escapar(n.id)}">Leer más</a></p>
             </div>
           </article>`).join("")}
       </div>
@@ -173,13 +174,20 @@
         <div class="noticia__img">${imagenHTML(n, "", n.titulo)}</div>
         <div class="noticia__cuerpo">
           <div class="noticia__meta">${escapar(n.etiqueta || "Noticia")} · ${fechaLarga(n.fecha)}</div>
-          <h3><a href="${raiz}noticias/${escapar(n.id)}.html" style="color:inherit;text-decoration:none">${escapar(n.titulo)}</a></h3>
+          <h3><a href="${raiz}noticias/${escapar(n.id)}" style="color:inherit;text-decoration:none">${escapar(n.titulo)}</a></h3>
           <p>${escapar(n.resumen)}</p>
           ${n.cuerpo ? `<p>${escapar(n.cuerpo)}</p>` : ""}
           ${fuentesHTML(n)}
         </div>
       </article>`).join("");
   }
+  /* ---------- si una imagen de noticia falta, se muestra la tarjeta de la Cámara ---------- */
+  function respaldoImagenes() {
+    document.querySelectorAll("img[data-respaldo]").forEach((img) => {
+      img.addEventListener("error", () => { if (img.src !== img.dataset.respaldo) img.src = img.dataset.respaldo; }, { once: true });
+    });
+  }
+
   /* ---------- franja del dólar: la lee del sistema de la Cámara, que la baja cada hora de DolarApi ---------- */
   function franjaDolar() {
     const franja = document.getElementById("franja-dolar");

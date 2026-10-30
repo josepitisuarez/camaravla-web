@@ -160,12 +160,22 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   CCVLA). Es un enlace externo: el sitio no sabe nada de socios.
 - Google Fonts (Inter) se carga desde internet; sin conexión cae a la fuente del
   sistema. Es aceptable.
-- **URLs limpias en producción.** `html_handling: auto-trailing-slash` hace que
-  `/institucional.html` redirija (307) a `/institucional`. Funciona, pero los
-  links internos siguen apuntando a `.html` → un salto extra por clic. ⬜ Pasar
-  los enlaces de `sitio.js` y las páginas a rutas sin extensión cuando se toque
-  la navegación (en local con `servidor-dev.ps1` las rutas sin extensión NO
-  funcionan; habría que enseñárselas al script).
+- **URLs limpias** (30/10/2026): todos los enlaces internos van sin `.html`
+  (`/institucional`, `/noticias/<id>`); `servidor-dev.ps1` también las sirve.
+  `/x.html` sigue redirigiendo (307) a `/x` por `auto-trailing-slash`.
+- **Seguridad y caché en `_headers`** (30/10/2026, Workers Static Assets lo
+  lee): HSTS, CSP estricta (scripts solo propios, estilos propios + Google
+  Fonts, imágenes propias + OpenStreetMap, datos solo del sistema de la Cámara,
+  sin iframes), nosniff, Referrer-Policy, Permissions-Policy; caché de un año
+  para `assets/vendor`, una semana imágenes, un día CSS/JS con renovación en
+  segundo plano, cinco minutos `data/`. **Por la CSP no puede haber `<script>`
+  ni `onclick=`/`onerror=` en línea**: todo JavaScript va en archivos. Si se
+  suma un servicio externo (otro dominio de datos o de imágenes), hay que
+  agregarlo a la CSP o el navegador lo bloquea en silencio. `robots.txt` propio
+  y `sitemap.xml` generado por `generar-noticias.mjs` (mapa y legal fuera).
+  ⬜ En el panel de Cloudflare (cuenta de Pity): "Always Use HTTPS" (hoy
+  `http://` responde sin redirigir), TLS mínimo 1.2, y DNS + dominio del
+  Worker para `www`.
 - URL técnica del Worker: `camaravla-web.jose-suarez-870.workers.dev`.
 - **El dominio anterior `camaradecomerciovla.org.ar`** existió (2020) y está
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.

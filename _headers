@@ -1,0 +1,24 @@
+# Cabeceras que Cloudflare agrega al servir el sitio (Workers Static Assets lee este archivo).
+# Seguridad: sin scripts ni estilos de terceros salvo Google Fonts; datos solo del sistema de la Cámara;
+# imágenes propias y mapas de OpenStreetMap; nadie puede meter el sitio en un iframe.
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://tile.openstreetmap.org https://*.tile.openstreetmap.org; connect-src 'self' https://gestion.camaravla.org.ar https://socios.camaravla.org.ar; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# Caché: lo que no cambia, un año; lo que cambia poco, un día con renovación en segundo plano;
+# los datos (noticias, cotizaciones del sitio), cinco minutos.
+/assets/vendor/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+/assets/css/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/assets/js/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/data/*
+  Cache-Control: public, max-age=300, stale-while-revalidate=3600

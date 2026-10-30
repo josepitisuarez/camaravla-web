@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /mapa
+Disallow: /legal
+Sitemap: https://camaravla.org.ar/sitemap.xml
