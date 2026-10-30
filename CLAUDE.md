@@ -123,6 +123,12 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   Para una noticia nueva: bajar de Pexels con
   `?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`, guardar con el id de la
   noticia, poner `imagen` en `noticias.js`, correr el generador.
+  **29/10 (noche): Pity retiró las ocho notas de prensa** ("sacá todas las
+  noticias, subí solo esa"): el sitio publica solo novedades propias de la
+  Cámara, hoy una, con la foto de su Instagram (``, publicación
+  DfCiYSnpIKJ, bajada a mano porque Instagram pide sesión para ver más de
+  quince publicaciones). Las retiradas quedaron en
+  `docs/noticias-prensa-2026-retiradas.js` por si vuelven.
 - **Franja del dólar** (29/10/2026): `sitio.js` la inyecta debajo de la cabecera
   y la llena con `https://gestion.camaravla.org.ar/datos/cotizaciones.json`
   (en local, `localhost:3000`); si no hay datos, queda oculta. Se desplaza con
