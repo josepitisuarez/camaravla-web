@@ -114,6 +114,15 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   con el servidor local andando. Una noticia con `imagen` propia (foto de la
   Cámara, nunca de un medio) la usa en vez de la tarjeta. WhatsApp cachea la
   vista previa: si se cambia la imagen, cambiar también el nombre del archivo.
+  **Desde el 29/10 (tarde) las noticias llevan foto genérica de Pexels** en
+  `assets/img/noticias/<id>.jpg` (1200×630), elegida por tema; la tarjeta de
+  texto queda solo como respaldo (`camara.png`). Fotos usadas (número de foto
+  en Pexels): ingresos brutos 18970199 (lago Correntoso) · Congreso 31192612 ·
+  ruido 18331431 · estacionalidad 4427225 · Carta Orgánica 261621 · reforma
+  laboral 31353701 · agua 31724660 · asamblea 8761524 · capacitación 3183186.
+  Para una noticia nueva: bajar de Pexels con
+  `?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`, guardar con el id de la
+  noticia, poner `imagen` en `noticias.js`, correr el generador.
 - **Capacitaciones** (`capacitaciones.html` + `assets/js/capacitaciones.js`,
   29/10/2026): el programa es texto fijo de la página; los datos prácticos
   (fechas, lugar, costo, cupo, si la inscripción sigue abierta) se leen de

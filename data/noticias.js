@@ -8,11 +8,15 @@
    autorización) · fuente {nombre, url} o fuentes [{nombre, url}, ...] (opcional).
 
    Las notas de prensa se resumen con palabras propias y enlazan al medio: el texto
-   original es de cada portal. Cargadas el 29/10/2026 a pedido de Pity. */
+   original es de cada portal. Cargadas el 29/10/2026 a pedido de Pity.
+   Las imágenes son fotos genéricas de Pexels (licencia Pexels: uso comercial y
+   modificación permitidos, sin atribución obligatoria), elegidas por tema y
+   recortadas a 1200×630; el número de foto de Pexels está en CLAUDE.md. */
 
 window.NOTICIAS = [
   {
     id: "2026-10-ingresos-brutos-turismo",
+    imagen: "assets/img/noticias/2026-10-ingresos-brutos-turismo.jpg",
     fecha: "2026-10-15",
     etiqueta: "Gestiones",
     titulo: "La Cámara pidió a la Provincia eliminar Ingresos Brutos para la actividad turística",
@@ -25,6 +29,7 @@ window.NOTICIAS = [
   },
   {
     id: "2026-10-congreso-iva-turismo",
+    imagen: "assets/img/noticias/2026-10-congreso-iva-turismo.jpg",
     fecha: "2026-10-14",
     etiqueta: "Gestiones",
     titulo: "La Cámara llevó al Congreso el pedido de un IVA diferencial para el turismo",
@@ -34,6 +39,7 @@ window.NOTICIAS = [
   },
   {
     id: "2026-10-ordenanza-ruido-observaciones",
+    imagen: "assets/img/noticias/2026-10-ordenanza-ruido-observaciones.jpg",
     fecha: "2026-10-13",
     etiqueta: "Concejo Deliberante",
     titulo: "Ocho observaciones al proyecto de ordenanza sobre ruido urbano",
@@ -43,6 +49,7 @@ window.NOTICIAS = [
   },
   {
     id: "2026-09-estacionalidad-entrevista",
+    imagen: "assets/img/noticias/2026-09-estacionalidad-entrevista.jpg",
     fecha: "2026-09-25",
     etiqueta: "Entrevista",
     titulo: "Estacionalidad: meses difíciles para el comercio antes del verano",
@@ -52,6 +59,7 @@ window.NOTICIAS = [
   },
   {
     id: "2026-07-reforma-carta-organica",
+    imagen: "assets/img/noticias/2026-07-reforma-carta-organica.jpg",
     fecha: "2026-07-31",
     etiqueta: "Concejo Deliberante",
     titulo: "La Cámara propone una reforma parcial de la Carta Orgánica Municipal",
@@ -65,6 +73,7 @@ window.NOTICIAS = [
   },
   {
     id: "2026-01-reforma-laboral-pymes-came",
+    imagen: "assets/img/noticias/2026-01-reforma-laboral-pymes-came.jpg",
     fecha: "2026-01-30",
     etiqueta: "Gestiones",
     titulo: "Cámaras del interior piden a CAME una reforma laboral acorde a las pymes",
@@ -77,6 +86,7 @@ window.NOTICIAS = [
   },
   {
     id: "2026-01-falta-de-agua-temporada",
+    imagen: "assets/img/noticias/2026-01-falta-de-agua-temporada.jpg",
     fecha: "2026-01-21",
     etiqueta: "Comunicado",
     titulo: "Reclamo por la falta de agua potable en plena temporada",
@@ -89,6 +99,7 @@ window.NOTICIAS = [
   },
   {
     id: "2025-11-asamblea-nuevas-autoridades",
+    imagen: "assets/img/noticias/2025-11-asamblea-nuevas-autoridades.jpg",
     fecha: "2025-11-26",
     etiqueta: "Institucional",
     titulo: "La Asamblea Ordinaria eligió la Comisión Directiva 2025-2027",
