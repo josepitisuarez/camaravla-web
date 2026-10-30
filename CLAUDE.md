@@ -96,6 +96,18 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   portal). Una nota admite `fuente` o `fuentes` (varias). Para sumar una: una
   entrada más en el archivo y push. La pantalla de carga desde el panel de
   gestión sigue pendiente.
+- **Capacitaciones** (`capacitaciones.html` + `assets/js/capacitaciones.js`,
+  29/10/2026): el programa es texto fijo de la página; los datos prácticos
+  (fechas, lugar, costo, cupo, si la inscripción sigue abierta) se leen de
+  `https://gestion.camaravla.org.ar/capacitaciones/publicas.json`, y el
+  formulario se envía por `fetch` al sistema (`/capacitaciones/<clave>/inscribirse`).
+  En local apunta a `http://localhost:3000`. **El sitio no guarda inscripciones**:
+  se ven en Gestión CCVLA → Socios → Capacitaciones. La clave de la
+  capacitación está en `data-capacitacion` del formulario. Para la próxima
+  capacitación: alta en el panel y una página o bloque nuevo acá con su clave.
+- **El mapa de socios no se muestra todavía** (Pity, 29/10/2026): `mapa.html`
+  sigue servida pero sin enlace en el menú ni en la portada. Para mostrarlo,
+  reponer `["mapa", "Mapa", "mapa.html"]` en `enlaces` de `sitio.js`.
 - **Botón "Soy socio"** (08/10/2026) en el menú, la portada y Asociarse →
   `https://socios.camaravla.org.ar/` (portal del socio, servido por Gestión
   CCVLA). Es un enlace externo: el sitio no sabe nada de socios.
@@ -114,12 +126,16 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
 ## Estado actual / pendientes
 - **24/09/2026:** scaffolding + cinco páginas (inicio, institucional,
   observatorio, noticias, contacto) revisables en local. Sin publicar.
-- Pendientes de Pity: horario y teléfono de contacto · requisitos y cuota de
+- Pendientes de Pity: teléfono de contacto · requisitos y cuota de
   socio · texto de presentación (dijo "más adelante") · casilla destino de
   `info@` · confirmar tildes de nombres · registro de `camaravla.org.ar` en
   NIC.ar (en proceso) · canal de carga de noticias (Telegram, en standby).
 - Pendientes técnicos: cuenta Cloudflare de la Cámara · noticias y "asociarse"
   alimentados desde el panel de gestión (hoy noticias a mano y contacto por
   `mailto:`) · URLs sin `.html` · `www` · dominio viejo.
-- **29/10/2026:** Observatorio oculto del sitio y nueve noticias de prensa
-  2025-2026 cargadas (ver Gotchas).
+- **29/10/2026:** Observatorio oculto del sitio y noticias de prensa
+  2025-2026 cargadas (ver Gotchas); después, a pedido de Pity: fuera la nota
+  de la agenda navideña, mapa sin enlace por ahora, horario de atención
+  08:00 a 14:00, solapa Capacitaciones con formulario de inscripción al
+  sistema. **Sin publicar hasta el OK de Pity** (necesita el deploy del
+  sistema primero, si no el formulario no tiene dónde caer).

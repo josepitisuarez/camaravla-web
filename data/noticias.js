@@ -51,15 +51,6 @@ window.NOTICIAS = [
     fuente: { nombre: "La Angostura Digital, 25/09/2026", url: "https://www.laangosturadigital.com.ar/2026/09/25/jose-suarez-advirtio-por-la-estacionalidad-van-a-ser-meses-muy-complejos-para-el-comercio/" }
   },
   {
-    id: "2026-09-agenda-navidena-municipio",
-    fecha: "2026-09-25",
-    etiqueta: "Institucional",
-    titulo: "La Cámara participa de la planificación de la agenda navideña con el municipio",
-    resumen: "Andrés Abate y Edith Sanguine representaron a la Cámara en la reunión convocada por el intendente Javier Murer para organizar las actividades del 8 al 23 de diciembre.",
-    cuerpo: "Del encuentro participaron también la viceintendenta Tamara Martínez, la secretaria de Turismo Jimena Aguilar, la subsecretaria Lorena Reumann y el secretario de Gobierno Juan Pablo Naretti. El objetivo es articular la programación navideña con el sector comercial y turístico local.",
-    fuente: { nombre: "Diario Andino, 25/09/2026", url: "https://www.diarioandino.com.ar/noticias/2026/09/25/237988-villa-la-angostura-comienza-a-planificar-una-agenda-de-actividades-para-la-epoca-navidena" }
-  },
-  {
     id: "2026-07-reforma-carta-organica",
     fecha: "2026-07-31",
     etiqueta: "Concejo Deliberante",

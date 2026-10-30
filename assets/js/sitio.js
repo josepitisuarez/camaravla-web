@@ -9,7 +9,7 @@
   const enlaces = [
     ["inicio", "Inicio", "index.html"],
     ["institucional", "Institucional", "institucional.html"],
-    ["mapa", "Mapa", "mapa.html"],
+    ["capacitaciones", "Capacitaciones", "capacitaciones.html"],
     ["noticias", "Noticias", "noticias.html"],
     ["contacto", "Contacto", "contacto.html"],
   ];

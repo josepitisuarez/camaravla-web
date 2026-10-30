@@ -16,6 +16,7 @@ Write-Host "Sirviendo $raiz en http://localhost:$Puerto/  (Ctrl+C para cortar)"
 try {
   while ($oyente.IsListening) {
     $ctx = $oyente.GetContext()
+    try {
     $ruta = [Uri]::UnescapeDataString($ctx.Request.Url.AbsolutePath)
     if ($ruta.EndsWith("/")) { $ruta += "index.html" }
     $archivo = Join-Path $raiz ($ruta.TrimStart("/") -replace "/", "\")
@@ -26,12 +27,13 @@ try {
       $ctx.Response.ContentType = if ($tipos.ContainsKey($ext)) { $tipos[$ext] } else { "application/octet-stream" }
       $ctx.Response.Headers.Add("Cache-Control", "no-store")
       $ctx.Response.ContentLength64 = $bytes.Length
-      $ctx.Response.OutputStream.Write($bytes, 0, $bytes.Length)
+      if ($ctx.Request.HttpMethod -ne "HEAD") { $ctx.Response.OutputStream.Write($bytes, 0, $bytes.Length) }
     } else {
       $ctx.Response.StatusCode = 404
       $msg = [Text.Encoding]::UTF8.GetBytes("404 - no existe $ruta")
       $ctx.Response.OutputStream.Write($msg, 0, $msg.Length)
     }
-    $ctx.Response.Close()
+    } catch { Write-Host "pedido fallido: $_" }
+    try { $ctx.Response.Close() } catch {}
   }
 } finally { $oyente.Stop() }

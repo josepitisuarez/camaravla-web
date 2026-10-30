@@ -192,3 +192,22 @@ tr:last-child td { border-bottom: 0; }
 .mapa__filtros label { display: grid; gap: 4px; font-weight: 600; font-size: .9rem; }
 .mapa__filtros select, .mapa__filtros input { font: inherit; padding: 8px 10px; border: 1px solid var(--linea); border-radius: 8px; }
 @media (max-width: 640px) { .mapa { height: 380px; } }
+
+/* ---------- formularios del sitio (inscripciones) ---------- */
+.formulario { display: grid; gap: 14px; }
+.formulario label { display: grid; gap: 6px; font-weight: 600; font-size: 0.95rem; }
+.formulario input[type="text"], .formulario input[type="tel"] { font: inherit; padding: 10px 12px; border: 1px solid var(--linea); border-radius: 8px; background: #fff; width: 100%; }
+.formulario input:focus { outline: 2px solid var(--rojo); outline-offset: 1px; border-color: var(--rojo); }
+.formulario .casilla { display: flex; align-items: center; gap: 10px; font-weight: 500; }
+.formulario .casilla input { width: 20px; height: 20px; accent-color: var(--rojo); }
+.formulario .fila-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.formulario .trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.formulario button[disabled] { opacity: 0.6; cursor: wait; }
+.mensaje { padding: 12px 14px; border-radius: 8px; border: 1px solid var(--linea); margin-top: 12px; }
+.mensaje--ok { background: #e6f4ec; border-color: #9dd3b4; color: #1b7f4b; }
+.mensaje--error { background: #fdecea; border-color: #f5b5ae; color: var(--rojo-oscuro); }
+.ficha-dato { display: grid; grid-template-columns: 140px 1fr; gap: 6px 12px; margin: 0; }
+.ficha-dato dt { font-weight: 700; color: var(--texto-suave); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; }
+.ficha-dato dd { margin: 0; }
+.programa h3 { margin-top: 22px; }
+@media (max-width: 640px) { .formulario .fila-2 { grid-template-columns: 1fr; } .ficha-dato { grid-template-columns: 1fr; } }
