@@ -44,7 +44,7 @@
       poner("costo", c.costo);
       poner("cupo", c.cupo ? c.cupo + " lugares" : "sin límite");
       if (!c.inscripcion_abierta) {
-        cerrar(c.cupo_lleno ? "El cupo está completo. Si querés quedar en lista de espera, escribinos a info@camaravla.org.ar." : "La inscripción está cerrada.");
+        cerrar(c.cupo_lleno ? "El cupo está completo. Si querés quedar en lista de espera, escribinos a secretariaccvla@gmail.com." : "La inscripción está cerrada.");
       }
     })
     .catch(() => {});
@@ -65,13 +65,13 @@
       const cuerpo = await r.json().catch(() => ({}));
       if (r.ok && cuerpo.ok) {
         form.reset();
-        mostrar("ok", "<strong>Inscripción recibida.</strong> " + (cuerpo.confirmacion_enviada ? "Te mandamos un mail con los datos. " : "") + "Te vamos a confirmar el lugar por WhatsApp. Si tenés dudas, escribinos a info@camaravla.org.ar.");
+        mostrar("ok", "<strong>Inscripción recibida.</strong> " + (cuerpo.confirmacion_enviada ? "Te mandamos un mail con los datos. " : "") + "Te vamos a confirmar el lugar por WhatsApp. Si tenés dudas, escribinos a secretariaccvla@gmail.com.");
       } else {
-        const errores = Array.isArray(cuerpo.errores) && cuerpo.errores.length ? cuerpo.errores : ["No pudimos registrar la inscripción. Probá de nuevo en unos minutos o escribinos a info@camaravla.org.ar."];
+        const errores = Array.isArray(cuerpo.errores) && cuerpo.errores.length ? cuerpo.errores : ["No pudimos registrar la inscripción. Probá de nuevo en unos minutos o escribinos a secretariaccvla@gmail.com."];
         mostrar("error", errores.map(escapar).join(" "));
       }
     } catch (e) {
-      mostrar("error", "No hay conexión con el sistema de inscripciones. Probá de nuevo en unos minutos o escribinos a info@camaravla.org.ar.");
+      mostrar("error", "No hay conexión con el sistema de inscripciones. Probá de nuevo en unos minutos o escribinos a secretariaccvla@gmail.com.");
     } finally {
       boton.disabled = false;
     }

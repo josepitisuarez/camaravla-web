@@ -20,7 +20,7 @@ window.NOTICIAS = [
     etiqueta: "Encuentros",
     titulo: "Primer encuentro con comerciantes y prestadores para pensar propuestas en conjunto",
     resumen: "En un contexto difícil y de mucha incertidumbre, la Cámara convocó a comerciantes, productores y prestadores de servicios a un mediodía de charla y diagnóstico, para sumar esfuerzos en propuestas que beneficien al turismo y al comercio del pueblo.",
-    cuerpo: "Los disparadores fueron las propuestas y actividades turísticas, la infraestructura, los beneficios impositivos, los alquileres y la sostenibilidad de la actividad comercial, y el contexto general de baja del consumo. El encuentro se realizó el lunes 26 de octubre y se va a repetir próximamente, sumando más actores con ganas de involucrarse. Agradecemos la participación, el respeto y la predisposición para empujar juntos la actividad. Si te interesa participar de la próxima reunión, escribinos a info@camaravla.org.ar o por nuestras redes.",
+    cuerpo: "Los disparadores fueron las propuestas y actividades turísticas, la infraestructura, los beneficios impositivos, los alquileres y la sostenibilidad de la actividad comercial, y el contexto general de baja del consumo. El encuentro se realizó el lunes 26 de octubre y se va a repetir próximamente, sumando más actores con ganas de involucrarse. Agradecemos la participación, el respeto y la predisposición para empujar juntos la actividad. Si te interesa participar de la próxima reunión, escribinos a secretariaccvla@gmail.com o por nuestras redes.",
     imagen: "assets/img/noticias/2026-10-encuentro-comerciantes.jpg",
     fuente: { nombre: "Instagram @camaravla, 28/10/2026", url: "https://www.instagram.com/p/DfCiYSnpIKJ/" }
   },

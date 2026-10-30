@@ -43,7 +43,7 @@
       <div>
         <div class="pie__logo"><img src="${raiz}assets/img/logo.png" alt=""></div>
         <p>La casa del sector privado de Villa La Angostura, Neuquén. Fundada en 1979.</p>
-        <p><a href="mailto:info@camaravla.org.ar">info@camaravla.org.ar</a></p>
+        <p><a href="mailto:secretariaccvla@gmail.com">secretariaccvla@gmail.com</a></p>
       </div>
       <div>
         <h4>Secciones</h4>

@@ -129,6 +129,14 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   DfCiYSnpIKJ, bajada a mano porque Instagram pide sesión para ver más de
   quince publicaciones). Las retiradas quedaron en
   `docs/noticias-prensa-2026-retiradas.js` por si vuelven.
+- **Contacto público = los Gmail de secretaría y asistente** (Pity, 30/10/2026,
+  "avancemos con los gmails"): `secretariaccvla@gmail.com` y
+  `asistenteccvla@gmail.com` en Contacto, pie, aviso legal, capacitaciones y
+  noticias; `info@camaravla.org.ar` no se muestra en el sitio. **Deuda
+  anotada:** son cuentas fuera del dominio de la Cámara; si cambia la
+  secretaría hay que actualizar el sitio y el parámetro `correo_responder_a`
+  del sistema. El remitente de los mails automáticos sigue siendo `info@`
+  (único dominio verificado en Resend) con "responder a" hacia esos Gmail.
 - **Franja del dólar** (29/10/2026): `sitio.js` la inyecta debajo de la cabecera
   y la llena con `https://gestion.camaravla.org.ar/datos/cotizaciones.json`
   (en local, `localhost:3000`); si no hay datos, queda oculta. Se desplaza con
