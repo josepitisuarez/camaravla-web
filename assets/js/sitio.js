@@ -77,7 +77,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     const c = document.querySelector("[data-cabecera]");
     const p = document.querySelector("[data-pie]");
-    if (c) c.outerHTML = cabecera();
+    if (c) c.outerHTML = cabecera() + '<div class="franja" id="franja-dolar" hidden aria-label="Cotizaciones del dólar"></div>';
     if (p) p.outerHTML = pie();
 
     const toggle = document.querySelector(".nav__toggle");
@@ -91,6 +91,7 @@
 
     rotativa();
     listadoNoticias();
+    franjaDolar();
   });
 
   /* ---------- utilidades ---------- */
@@ -178,5 +179,29 @@
           ${fuentesHTML(n)}
         </div>
       </article>`).join("");
+  }
+  /* ---------- franja del dólar: la lee del sistema de la Cámara, que la baja cada hora de DolarApi ---------- */
+  function franjaDolar() {
+    const franja = document.getElementById("franja-dolar");
+    if (!franja) return;
+    const esLocal = /^(localhost|127.0.0.1)$/.test(location.hostname);
+    const api = esLocal ? "http://localhost:3000" : "https://gestion.camaravla.org.ar";
+    const pesos = (v) => "$ " + Number(v).toLocaleString("es-AR", { maximumFractionDigits: 0 });
+    fetch(api + "/datos/cotizaciones.json")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!d || !Array.isArray(d.cotizaciones) || !d.cotizaciones.length) return;
+        const hora = d.actualizado ? new Date(d.actualizado).toLocaleString("es-AR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) : "";
+        const items = d.cotizaciones.map((c) => {
+          const v = c.variacion_pct;
+          const flecha = v > 0 ? '<span class="sube">▲ +' + String(v).replace(".", ",") + '%</span>' : v < 0 ? '<span class="baja">▼ ' + String(v).replace(".", ",") + '%</span>' : "";
+          return '<span class="franja__item"><strong>Dólar ' + escapar(c.nombre) + "</strong> " + pesos(c.venta) + (c.compra ? ' <span class="franja__compra">compra ' + pesos(c.compra) + "</span>" : "") + " " + flecha + "</span>";
+        });
+        items.push('<span class="franja__item franja__meta">Actualizado ' + escapar(hora) + " · Fuente: " + escapar(d.fuente || "") + "</span>");
+        const pista = '<span class="franja__pista">' + items.join('<span class="franja__sep">·</span>') + "</span>";
+        franja.innerHTML = '<div class="contenedor franja__fila">' + pista + pista + "</div>";
+        franja.hidden = false;
+      })
+      .catch(() => {});
   }
 })();

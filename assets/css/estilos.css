@@ -211,3 +211,18 @@ tr:last-child td { border-bottom: 0; }
 .ficha-dato dd { margin: 0; }
 .programa h3 { margin-top: 22px; }
 @media (max-width: 640px) { .formulario .fila-2 { grid-template-columns: 1fr; } .ficha-dato { grid-template-columns: 1fr; } }
+
+/* ---------- franja del dólar (debajo de la cabecera; se oculta si no hay datos) ---------- */
+.franja { background: var(--tinta); color: #e9edf0; font-size: 0.86rem; border-bottom: 1px solid #2c3942; overflow: hidden; }
+.franja__fila { display: flex; gap: 48px; white-space: nowrap; padding: 7px 0; width: max-content; min-width: 100%; animation: franja-desplazar 45s linear infinite; }
+.franja:hover .franja__fila { animation-play-state: paused; }
+.franja__pista { display: inline-flex; gap: 14px; align-items: center; }
+.franja__item strong { color: #fff; font-weight: 700; }
+.franja__compra { color: #9aa6b0; }
+.franja__sep { color: #5b6670; }
+.franja__meta { color: #9aa6b0; }
+.franja .sube { color: #7fd1a0; font-weight: 600; }
+.franja .baja { color: #ff8a8e; font-weight: 600; }
+@keyframes franja-desplazar { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .franja__fila { animation: none; width: auto; } .franja__pista + .franja__pista { display: none; } .franja { overflow-x: auto; } }
+@media (min-width: 1100px) { .franja__fila { animation-duration: 60s; } }

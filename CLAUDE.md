@@ -123,6 +123,12 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   Para una noticia nueva: bajar de Pexels con
   `?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`, guardar con el id de la
   noticia, poner `imagen` en `noticias.js`, correr el generador.
+- **Franja del dólar** (29/10/2026): `sitio.js` la inyecta debajo de la cabecera
+  y la llena con `https://gestion.camaravla.org.ar/datos/cotizaciones.json`
+  (en local, `localhost:3000`); si no hay datos, queda oculta. Se desplaza con
+  CSS (pausa al pasar el mouse; sin animación si el usuario pidió menos
+  movimiento). El sitio no habla con DolarApi: eso lo hace el sistema de la
+  Cámara cada hora y la fuente viaja en el JSON.
 - **Capacitaciones** (`capacitaciones.html` + `assets/js/capacitaciones.js`,
   29/10/2026): el programa es texto fijo de la página; los datos prácticos
   (fechas, lugar, costo, cupo, si la inscripción sigue abierta) se leen de
