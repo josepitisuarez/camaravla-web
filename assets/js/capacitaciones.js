@@ -53,7 +53,7 @@
     ev.preventDefault();
     mensaje.hidden = true;
     const datos = new FormData(form);
-    const faltan = ["nombre", "apellido", "rubro", "whatsapp"].filter((k) => !String(datos.get(k) || "").trim());
+    const faltan = ["nombre", "apellido", "rubro", "whatsapp", "email"].filter((k) => !String(datos.get(k) || "").trim());
     if (faltan.length) { mostrar("error", "Completá todos los campos: " + faltan.join(", ") + "."); return; }
     boton.disabled = true;
     try {
@@ -65,7 +65,7 @@
       const cuerpo = await r.json().catch(() => ({}));
       if (r.ok && cuerpo.ok) {
         form.reset();
-        mostrar("ok", "<strong>Inscripción recibida.</strong> Te vamos a confirmar por WhatsApp. Si tenés dudas, escribinos a info@camaravla.org.ar.");
+        mostrar("ok", "<strong>Inscripción recibida.</strong> " + (cuerpo.confirmacion_enviada ? "Te mandamos un mail con los datos. " : "") + "Te vamos a confirmar el lugar por WhatsApp. Si tenés dudas, escribinos a info@camaravla.org.ar.");
       } else {
         const errores = Array.isArray(cuerpo.errores) && cuerpo.errores.length ? cuerpo.errores : ["No pudimos registrar la inscripción. Probá de nuevo en unos minutos o escribinos a info@camaravla.org.ar."];
         mostrar("error", errores.map(escapar).join(" "));
