@@ -117,7 +117,7 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   **Desde el 29/10 (tarde) las noticias llevan foto genérica de Pexels** en
   `assets/img/noticias/<id>.jpg` (1200×630), elegida por tema; la tarjeta de
   texto queda solo como respaldo (`camara.png`). Fotos usadas (número de foto
-  en Pexels): ingresos brutos 18970199 (lago Correntoso) · Congreso 31192612 ·
+  en Pexels): ingresos brutos 6256066 (pizarrón con fórmulas; Pity, 29/10: "fórmulas matemáticas genéricas", archivo `-v2` para renovar la caché de WhatsApp) · Congreso 31192612 ·
   ruido 18331431 · estacionalidad 4427225 · Carta Orgánica 261621 · reforma
   laboral 31353701 · agua 31724660 · asamblea 8761524 · capacitación 3183186.
   Para una noticia nueva: bajar de Pexels con

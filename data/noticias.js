@@ -16,7 +16,7 @@
 window.NOTICIAS = [
   {
     id: "2026-10-ingresos-brutos-turismo",
-    imagen: "assets/img/noticias/2026-10-ingresos-brutos-turismo.jpg",
+    imagen: "assets/img/noticias/2026-10-ingresos-brutos-turismo-v2.jpg",
     fecha: "2026-10-15",
     etiqueta: "Gestiones",
     titulo: "La Cámara pidió a la Provincia eliminar Ingresos Brutos para la actividad turística",
