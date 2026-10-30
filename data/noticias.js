@@ -43,5 +43,14 @@ window.NOTICIAS = [
     cuerpo: "En diálogo con La Angostura Digital, Suárez describió un contexto exigente para la economía local y nacional: la rápida implementación del nuevo esquema macroeconómico, los problemas históricos de logística y la incertidumbre de la revolución tecnológica. En lo local, señaló la falta de obras de agua, energía y saneamiento y la necesidad de equipos técnicos a la altura de un pueblo que creció mucho desde los tiempos de 3.000 habitantes. Como ejemplo de lo que se puede lograr, destacó el camino del Enviatur, que pasó de los conflictos de 2017 a reuniones periódicas, presupuesto claro y diálogo entre lo público y lo privado. Para los dos años de mandato, la Cámara se propone impulsar la participación privada, poner la infraestructura en agenda, consolidar la planificación estratégica con municipio y provincia y fortalecer la institucionalidad del Enviatur. La entrevista completa está en La Angostura Digital.",
     imagen: "assets/img/noticias/2025-12-sede-camara.jpg",
     fuente: { nombre: "La Angostura Digital, 07/12/2025", url: "https://www.laangosturadigital.com.ar/2025/12/07/es-hora-que-el-privado-levante-su-voz-para-ser-escuchado-por-la-agenda-de-los-gobiernos-municipal-y-provincial/" }
+  },
+  {
+    id: "2026-09-estacionalidad-entrevista",
+    fecha: "2026-09-25",
+    etiqueta: "Entrevista",
+    titulo: "José Suárez advirtió por la estacionalidad: van a ser meses muy complejos para el comercio",
+    resumen: "José Alberto Suárez anticipó un período complejo para comercios y servicios tras una temporada invernal que arrancó tarde, y describió el problema como estructural.",
+    cuerpo: "Entre las causas mencionó la retracción del consumo, el aumento de costos de las pymes, la desaceleración de la construcción, el peso de los alquileres comerciales, la presión impositiva y los costos logísticos. Sostuvo que el pueblo no está preparado para un turismo masivo y volvió sobre la necesidad de actualizar la Carta Orgánica municipal, con un ente con autonomía presupuestaria, política y técnica. La entrevista completa está en La Angostura Digital.",
+    fuente: {"nombre":"La Angostura Digital, 25/09/2026","url":"https://www.laangosturadigital.com.ar/2026/09/25/jose-suarez-advirtio-por-la-estacionalidad-van-a-ser-meses-muy-complejos-para-el-comercio/"}
   }
 ];
