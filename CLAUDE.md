@@ -83,6 +83,19 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   solo lo comercial de socios activos que no se ocultaron) y lo dibuja con
   Leaflet + OpenStreetMap alojados en `assets/vendor/leaflet` (copiados del
   sistema). `assets/js/mapa.js` es el mismo script que usa la cocina.
+- **El Observatorio no se muestra en el sitio** (Pity, 29/10/2026: "que no sea
+  visible nada del observatorio"). Se quitó del menú, la portada, el pie,
+  Contacto, Noticias y el Aviso legal; `observatorio/` y `data/observatorio.js`
+  siguen en el repo pero `.assetsignore` los deja fuera del deploy, así
+  `/observatorio` da 404. Para volver a mostrarlo: sacar esas dos líneas del
+  `.assetsignore`, reponer la entrada del menú en `sitio.js` y los bloques de
+  portada (están en el historial, commit de este cambio).
+- **Noticias de prensa** (29/10/2026): `data/noticias.js` se carga a mano con
+  las notas de La Angostura Digital y Diario Andino sobre la Cámara, resumidas
+  con palabras propias y enlazadas al medio (nunca el texto ni las fotos del
+  portal). Una nota admite `fuente` o `fuentes` (varias). Para sumar una: una
+  entrada más en el archivo y push. La pantalla de carga desde el panel de
+  gestión sigue pendiente.
 - **Botón "Soy socio"** (08/10/2026) en el menú, la portada y Asociarse →
   `https://socios.camaravla.org.ar/` (portal del socio, servido por Gestión
   CCVLA). Es un enlace externo: el sitio no sabe nada de socios.
@@ -105,6 +118,8 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   socio · texto de presentación (dijo "más adelante") · casilla destino de
   `info@` · confirmar tildes de nombres · registro de `camaravla.org.ar` en
   NIC.ar (en proceso) · canal de carga de noticias (Telegram, en standby).
-- Pendientes técnicos: cuenta Cloudflare de la Cámara · Pages + Email Routing ·
-  generador de `data/*.js` en SERVIL · sección de boletines cuando exista el
-  primero · formulario de contacto (hoy es `mailto:`).
+- Pendientes técnicos: cuenta Cloudflare de la Cámara · noticias y "asociarse"
+  alimentados desde el panel de gestión (hoy noticias a mano y contacto por
+  `mailto:`) · URLs sin `.html` · `www` · dominio viejo.
+- **29/10/2026:** Observatorio oculto del sitio y nueve noticias de prensa
+  2025-2026 cargadas (ver Gotchas).

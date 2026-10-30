@@ -9,7 +9,6 @@
   const enlaces = [
     ["inicio", "Inicio", "index.html"],
     ["institucional", "Institucional", "institucional.html"],
-    ["observatorio", "Observatorio", "observatorio/index.html"],
     ["mapa", "Mapa", "mapa.html"],
     ["noticias", "Noticias", "noticias.html"],
     ["contacto", "Contacto", "contacto.html"],
@@ -69,8 +68,7 @@
       <br>
       <a href="${raiz}legal.html">Aviso legal</a> ·
       <a href="https://gestion.camaravla.org.ar/legales/privacidad" rel="noopener">Política de privacidad</a> ·
-      <a href="https://socios.camaravla.org.ar/socios/legales/terminos_portal" rel="noopener">Términos del portal del socio</a> ·
-      Datos abiertos del Observatorio bajo <a href="https://creativecommons.org/licenses/by/4.0/deed.es" rel="noopener">CC BY 4.0</a>
+      <a href="https://socios.camaravla.org.ar/socios/legales/terminos_portal" rel="noopener">Términos del portal del socio</a>
     </div>
   </div>
 </footer>`;
@@ -93,7 +91,6 @@
 
     rotativa();
     listadoNoticias();
-    indicadores();
   });
 
   /* ---------- utilidades ---------- */
@@ -108,6 +105,12 @@
   function noticiasOrdenadas() {
     const lista = Array.isArray(window.NOTICIAS) ? window.NOTICIAS.slice() : [];
     return lista.sort((a, b) => (a.fecha < b.fecha ? 1 : -1));
+  }
+  function fuentesHTML(n) {
+    const lista = Array.isArray(n.fuentes) ? n.fuentes : n.fuente ? [n.fuente] : [];
+    if (!lista.length) return "";
+    const enlaces = lista.map((f) => `<a href="${escapar(f.url)}" rel="noopener" target="_blank">${escapar(f.nombre)}</a>`).join(" · ");
+    return `<p class="chico suave">${lista.length > 1 ? "Fuentes" : "Fuente"}: ${enlaces}</p>`;
   }
   function imagenHTML(n, claseImg, alt) {
     return n.imagen
@@ -172,29 +175,8 @@
           <h3>${escapar(n.titulo)}</h3>
           <p>${escapar(n.resumen)}</p>
           ${n.cuerpo ? `<p>${escapar(n.cuerpo)}</p>` : ""}
-          ${n.fuente ? `<p class="chico suave">Fuente: <a href="${escapar(n.fuente.url)}" rel="noopener" target="_blank">${escapar(n.fuente.nombre)}</a></p>` : ""}
+          ${fuentesHTML(n)}
         </div>
       </article>`).join("");
-  }
-
-  /* ---------- los cuatro números del Observatorio ---------- */
-  function indicadores() {
-    const cont = document.querySelector("[data-indicadores]");
-    if (!cont || !window.OBSERVATORIO) return;
-    const o = window.OBSERVATORIO;
-    cont.innerHTML = o.indicadores.map((ind) => {
-      const sinDato = ind.valor === null || ind.valor === undefined;
-      const clase = ind.variacion > 0 ? "sube" : ind.variacion < 0 ? "baja" : "";
-      const signo = ind.variacion > 0 ? "▲ +" : ind.variacion < 0 ? "▼ " : "";
-      return `
-      <div class="indicador">
-        <div class="indicador__nombre">${escapar(ind.nombre)}</div>
-        <div class="indicador__valor">${sinDato ? "—" : escapar(ind.valor)}</div>
-        <div class="indicador__var ${clase}">${sinDato ? `<span class="pendiente">en preparación</span>` : `${signo}${ind.variacion}% interanual`}</div>
-        <div class="indicador__fuente">${escapar(ind.fuente)}</div>
-      </div>`;
-    }).join("");
-    const periodo = document.querySelector("[data-periodo]");
-    if (periodo) periodo.textContent = o.periodo || "";
   }
 })();
