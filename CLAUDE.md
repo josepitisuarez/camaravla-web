@@ -104,7 +104,10 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   `noticias.html#id`). **Correr el generador cada vez que cambie
   `noticias.js`** y commitear las páginas generadas. Las imágenes de vista
   previa viven en `assets/img/og/` (1200×630 PNG): `camara.png` por defecto,
-  `capacitacion-liderar-mejor.png`, y `noticia-<id>.png` por noticia. Se
+  `capacitacion-liderar-mejor.png`, y `noticia-<id>.png` por noticia. La capacitación usa en cambio una foto genérica de Pexels
+  (`assets/img/capacitaciones/liderar-mejor.jpg`, autor fauxels, foto 3183186,
+  licencia Pexels: uso comercial y modificación permitidos, sin atribución
+  obligatoria; Pity autorizó la foto genérica el 29/10/2026). Se
   dibujan con `scripts/og/tarjeta.html` (canvas en el navegador, marca de la
   Cámara + título) y las recibe `node scripts/og/recibir.mjs` en el puerto
   3999: abrir `http://localhost:8090/scripts/og/tarjeta.html?auto=1&archivo=...&t=...&s=...`
