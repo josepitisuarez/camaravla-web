@@ -165,7 +165,7 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
 ## Estado actual / pendientes
 - **24/09/2026:** scaffolding + cinco páginas (inicio, institucional,
   observatorio, noticias, contacto) revisables en local. Sin publicar.
-- Pendientes de Pity: teléfono de contacto · requisitos y cuota de
+- Pendientes de Pity: requisitos y cuota de
   socio · texto de presentación (dijo "más adelante") · casilla destino de
   `info@` · confirmar tildes de nombres · registro de `camaravla.org.ar` en
   NIC.ar (en proceso) · canal de carga de noticias (Telegram, en standby).
