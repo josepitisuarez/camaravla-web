@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Tarjeta para vista previa (Open Graph)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#ddd;font-family:Inter,sans-serif;padding:20px}canvas{box-shadow:0 4px 20px rgba(0,0,0,.2);max-width:100%}#estado{margin:10px 0;font-size:14px}</style>
+</head>
+<body>
+<!-- Dibuja una tarjeta de 1200×630 con la marca de la Cámara y un título, y la
+     manda a scripts/og/recibir.mjs (puerto 3999). Parámetros en la URL:
+     t = título · s = antetítulo · f = pie (opcional) · archivo = nombre sin extensión · auto=1 envía solo. -->
+<div id="estado">dibujando…</div>
+<canvas id="c" width="1200" height="630"></canvas>
+<script>
+(async () => {
+  const q = new URLSearchParams(location.search);
+  const titulo = q.get('t') || 'Cámara de Comercio, Turismo, Industria y Producción de Villa La Angostura';
+  const ante = q.get('s') || 'Villa La Angostura · Neuquén';
+  const pie = q.get('f') || 'camaravla.org.ar';
+  const archivo = q.get('archivo') || 'tarjeta';
+  await document.fonts.load('800 60px Inter'); await document.fonts.load('700 26px Inter'); await document.fonts.load('600 24px Inter');
+  const logo = new Image(); logo.src = '../../assets/img/logo.png';
+  await new Promise((ok, mal) => { logo.onload = ok; logo.onerror = mal; });
+  const c = document.getElementById('c'), x = c.getContext('2d');
+  x.fillStyle = '#f6f4f0'; x.fillRect(0, 0, 1200, 630);
+  x.fillStyle = '#d7262b'; x.fillRect(0, 0, 22, 630);
+  x.fillStyle = '#1f2a33'; x.fillRect(0, 606, 1200, 24);
+  const altoLogo = 96, anchoLogo = logo.width * (altoLogo / logo.height);
+  x.drawImage(logo, 80, 56, anchoLogo, altoLogo);
+  x.fillStyle = '#d7262b'; x.font = '700 26px Inter'; x.textBaseline = 'top';
+  x.fillText(ante.toUpperCase(), 80, 206);
+  // Título: envuelve y achica hasta que entre en 4 líneas.
+  const maxAncho = 1040; let tam = 62, lineas;
+  const envolver = (t, f) => { x.font = `800 ${f}px Inter`; const palabras = t.split(/\s+/), out = []; let l = ''; for (const p of palabras) { const prueba = l ? l + ' ' + p : p; if (x.measureText(prueba).width > maxAncho && l) { out.push(l); l = p; } else l = prueba; } if (l) out.push(l); return out; };
+  do { lineas = envolver(titulo, tam); if (lineas.length <= 4) break; tam -= 4; } while (tam > 34);
+  x.fillStyle = '#1f2a33'; x.font = `800 ${tam}px Inter`;
+  let y = 252; for (const l of lineas) { x.fillText(l, 80, y); y += tam * 1.18; }
+  x.fillStyle = '#5b6670'; x.font = '600 24px Inter'; x.textAlign = 'right'; x.fillText(pie, 1120, 560);
+  document.getElementById('estado').textContent = 'lista: ' + archivo + '.png';
+  if (q.get('auto') === '1') {
+    const blob = await new Promise((ok) => c.toBlob(ok, 'image/png'));
+    try {
+      const r = await fetch('http://localhost:3999/guardar?archivo=' + encodeURIComponent(archivo), { method: 'POST', body: blob });
+      document.getElementById('estado').textContent = 'enviada: ' + (await r.text());
+    } catch (e) { document.getElementById('estado').textContent = 'error al enviar: ' + e; }
+  }
+})();
+</script>
+</body>
+</html>

@@ -96,6 +96,21 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   portal). Una nota admite `fuente` o `fuentes` (varias). Para sumar una: una
   entrada más en el archivo y push. La pantalla de carga desde el panel de
   gestión sigue pendiente.
+- **Vistas previas para WhatsApp y redes (Open Graph, 29/10/2026).** Cada
+  página fija lleva `og:title`, `og:description`, `og:url` e `og:image`
+  absolutos, y **cada noticia tiene su propia página `noticias/<id>.html`**,
+  generada por `node scripts/generar-noticias.mjs` desde `data/noticias.js`
+  (WhatsApp lee las etiquetas sin ejecutar JavaScript, por eso no alcanza con
+  `noticias.html#id`). **Correr el generador cada vez que cambie
+  `noticias.js`** y commitear las páginas generadas. Las imágenes de vista
+  previa viven en `assets/img/og/` (1200×630 PNG): `camara.png` por defecto,
+  `capacitacion-liderar-mejor.png`, y `noticia-<id>.png` por noticia. Se
+  dibujan con `scripts/og/tarjeta.html` (canvas en el navegador, marca de la
+  Cámara + título) y las recibe `node scripts/og/recibir.mjs` en el puerto
+  3999: abrir `http://localhost:8090/scripts/og/tarjeta.html?auto=1&archivo=...&t=...&s=...`
+  con el servidor local andando. Una noticia con `imagen` propia (foto de la
+  Cámara, nunca de un medio) la usa en vez de la tarjeta. WhatsApp cachea la
+  vista previa: si se cambia la imagen, cambiar también el nombre del archivo.
 - **Capacitaciones** (`capacitaciones.html` + `assets/js/capacitaciones.js`,
   29/10/2026): el programa es texto fijo de la página; los datos prácticos
   (fechas, lugar, costo, cupo, si la inscripción sigue abierta) se leen de
@@ -133,6 +148,11 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
 - Pendientes técnicos: cuenta Cloudflare de la Cámara · noticias y "asociarse"
   alimentados desde el panel de gestión (hoy noticias a mano y contacto por
   `mailto:`) · URLs sin `.html` · `www` · dominio viejo.
+- **29/10/2026 (después):** vistas previas Open Graph en todas las páginas,
+  una página por noticia con su tarjeta, tarjeta de la capacitación.
+  Sin publicar hasta el OK de Pity. ⬜ Fotos propias de la Cámara para
+  reemplazar las tarjetas donde haya (Pity las manda o autoriza una foto de
+  banco con licencia libre).
 - **29/10/2026:** Observatorio oculto del sitio y noticias de prensa
   2025-2026 cargadas (ver Gotchas); después, a pedido de Pity: fuera la nota
   de la agenda navideña, mapa sin enlace por ahora, horario de atención

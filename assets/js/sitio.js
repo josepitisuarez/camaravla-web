@@ -112,10 +112,10 @@
     const enlaces = lista.map((f) => `<a href="${escapar(f.url)}" rel="noopener" target="_blank">${escapar(f.nombre)}</a>`).join(" · ");
     return `<p class="chico suave">${lista.length > 1 ? "Fuentes" : "Fuente"}: ${enlaces}</p>`;
   }
+  // Imagen de la noticia: la propia, o la tarjeta generada para ella (scripts/og), o la de la Cámara.
   function imagenHTML(n, claseImg, alt) {
-    return n.imagen
-      ? `<img src="${raiz}${escapar(n.imagen)}" alt="${escapar(alt || "")}" loading="lazy">`
-      : `<span>Cámara VLA</span>`;
+    const src = n.imagen || `assets/img/og/noticia-${n.id}.png`;
+    return `<img src="${raiz}${escapar(src)}" alt="${escapar(alt || "")}" loading="lazy" onerror="this.onerror=null;this.src='${raiz}assets/img/og/camara.png'">`;
   }
 
   /* ---------- rotativa del inicio: últimas 5, avanza sola cada 6 s ---------- */
@@ -134,7 +134,7 @@
               <div class="rotativa__meta"><span class="etiqueta">${escapar(n.etiqueta || "Noticia")}</span> · ${fechaLarga(n.fecha)}</div>
               <h3>${escapar(n.titulo)}</h3>
               <p>${escapar(n.resumen)}</p>
-              <p><a href="${raiz}noticias.html#${escapar(n.id)}">Leer más</a></p>
+              <p><a href="${raiz}noticias/${escapar(n.id)}.html">Leer más</a></p>
             </div>
           </article>`).join("")}
       </div>
@@ -172,7 +172,7 @@
         <div class="noticia__img">${imagenHTML(n, "", n.titulo)}</div>
         <div class="noticia__cuerpo">
           <div class="noticia__meta">${escapar(n.etiqueta || "Noticia")} · ${fechaLarga(n.fecha)}</div>
-          <h3>${escapar(n.titulo)}</h3>
+          <h3><a href="${raiz}noticias/${escapar(n.id)}.html" style="color:inherit;text-decoration:none">${escapar(n.titulo)}</a></h3>
           <p>${escapar(n.resumen)}</p>
           ${n.cuerpo ? `<p>${escapar(n.cuerpo)}</p>` : ""}
           ${fuentesHTML(n)}
