@@ -33,5 +33,15 @@ window.NOTICIAS = [
     cuerpo: "Felicitaciones a las ganadoras, que ya tienen sus órdenes de compra para usar en cualquiera de los comercios adheridos al sorteo. Gracias nuevamente a quienes participaron y a los comercios que se sumaron a esta iniciativa. ¡Hasta la próxima!",
     imagen: "assets/img/noticias/2026-10-sorteo-dia-de-la-madre.jpg",
     fuente: { nombre: "Instagram @camaravla, 27/10/2026", url: "https://www.instagram.com/p/DfAIQZ-pSAW/" }
+  },
+  {
+    id: "2025-12-el-privado-levante-su-voz",
+    fecha: "2025-12-07",
+    etiqueta: "Entrevista",
+    titulo: "Es hora que el privado levante su voz para ser escuchado en la agenda del municipio y la provincia",
+    resumen: "Al asumir la presidencia de la Cámara para el período 2025-2027, José Alberto Suárez planteó como objetivo central que el sector privado tenga más peso donde se toman las decisiones, ante el municipio y la provincia.",
+    cuerpo: "En diálogo con La Angostura Digital, Suárez describió un contexto exigente para la economía local y nacional: la rápida implementación del nuevo esquema macroeconómico, los problemas históricos de logística y la incertidumbre de la revolución tecnológica. En lo local, señaló la falta de obras de agua, energía y saneamiento y la necesidad de equipos técnicos a la altura de un pueblo que creció mucho desde los tiempos de 3.000 habitantes. Como ejemplo de lo que se puede lograr, destacó el camino del Enviatur, que pasó de los conflictos de 2017 a reuniones periódicas, presupuesto claro y diálogo entre lo público y lo privado. Para los dos años de mandato, la Cámara se propone impulsar la participación privada, poner la infraestructura en agenda, consolidar la planificación estratégica con municipio y provincia y fortalecer la institucionalidad del Enviatur. La entrevista completa está en La Angostura Digital.",
+    imagen: "assets/img/noticias/2025-12-sede-camara.jpg",
+    fuente: { nombre: "La Angostura Digital, 07/12/2025", url: "https://www.laangosturadigital.com.ar/2025/12/07/es-hora-que-el-privado-levante-su-voz-para-ser-escuchado-por-la-agenda-de-los-gobiernos-municipal-y-provincial/" }
   }
 ];
