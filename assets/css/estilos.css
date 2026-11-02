@@ -231,3 +231,14 @@ tr:last-child td { border-bottom: 0; }
 @keyframes franja-desplazar { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .franja__fila { animation: none; width: auto; } .franja__pista + .franja__pista { display: none; } .franja { overflow-x: auto; } }
 @media (min-width: 1100px) { .franja__fila { animation-duration: 60s; } }
+
+/* ---------- desplegable (details/summary): cerrado muestra solo el título ---------- */
+.desplegable { background: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); margin-top: 20px; overflow: hidden; }
+.desplegable summary { list-style: none; cursor: pointer; padding: 16px 20px; font-weight: 700; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.desplegable summary::-webkit-details-marker { display: none; }
+.desplegable summary::after { content: "+"; font-size: 1.4rem; line-height: 1; color: var(--rojo); font-weight: 800; flex: none; }
+.desplegable[open] summary::after { content: "–"; }
+.desplegable summary:hover { background: var(--fondo); }
+.desplegable__pista { font-weight: 400; color: var(--texto-suave); font-size: 0.88rem; flex: 1; }
+.desplegable__cuerpo { padding: 0 20px 20px; border-top: 1px solid var(--linea); }
+.desplegable__cuerpo img { width: 100%; height: auto; display: block; margin-top: 16px; border-radius: 8px; }
