@@ -59,8 +59,8 @@ p { margin: 0 0 1em; }
   background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--linea);
 }
-.cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 80px; }
-.cabecera__logo img { height: 60px; width: auto; }
+.cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 92px; }
+.cabecera__logo img { height: 72px; width: auto; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a {
   color: var(--tinta); text-decoration: none; font-weight: 600; font-size: 0.95rem;
@@ -184,7 +184,7 @@ tr:last-child td { border-bottom: 0; }
   .rotativa__item { grid-template-columns: 1fr; }
   .rotativa__imagen { min-height: 180px; }
   .rotativa__texto { padding: 22px 20px 56px; }
-  .nav { display: none; position: absolute; top: 80px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #fff; border-bottom: 1px solid var(--linea); padding: 10px 16px 16px; }
+  .nav { display: none; position: absolute; top: 92px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #fff; border-bottom: 1px solid var(--linea); padding: 10px 16px 16px; }
   .nav.abierto { display: flex; }
   .nav .boton { margin: 8px 0 0; text-align: center; }
   .nav__toggle { display: inline-block; }
@@ -244,4 +244,4 @@ tr:last-child td { border-bottom: 0; }
 .desplegable__cuerpo img { width: 100%; height: auto; display: block; margin-top: 16px; border-radius: 8px; }
 
 /* Las anclas (#liderar-mejor, #webinar-...) no quedan tapadas por la cabecera fija. */
-section[id], [id^="bio-"], #inscripcion, #datos-practicos { scroll-margin-top: 100px; }
+section[id], [id^="bio-"], #inscripcion, #datos-practicos { scroll-margin-top: 112px; }
