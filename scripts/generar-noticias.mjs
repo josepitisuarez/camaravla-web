@@ -84,7 +84,7 @@ mkdirSync(carpeta, { recursive: true });
 for (const archivo of readdirSync(carpeta)) if (archivo.endsWith('.html') && !noticias.some((n) => `${n.id}.html` === archivo)) unlinkSync(join(carpeta, archivo));
 for (const n of noticias) writeFileSync(join(carpeta, `${n.id}.html`), pagina(n), 'utf8');
 // Mapa del sitio: páginas fijas públicas más una entrada por noticia (mapa y legal quedan fuera a propósito).
-const FIJAS = ['', 'institucional', 'capacitaciones', 'noticias', 'contacto'];
+const FIJAS = ['', 'institucional', 'capacitaciones', 'capacitaciones/webinar-pymes-familiares', 'noticias', 'contacto'];
 const hoy = new Date().toISOString().slice(0, 10);
 const urls = [...FIJAS.map((p) => ({ loc: `${SITIO}/${p}`, lastmod: hoy })), ...noticias.map((n) => ({ loc: `${SITIO}/noticias/${n.id}`, lastmod: n.fecha }))];
 writeFileSync(join(RAIZ, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
