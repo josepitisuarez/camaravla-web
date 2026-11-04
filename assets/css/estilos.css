@@ -6,8 +6,8 @@
 /* camaravla.org.ar — hoja de estilos única. Sin framework, a propósito. */
 
 :root {
-  --rojo: #d7262b;          /* rojo del isologo */
-  --rojo-oscuro: #b01c21;
+  --rojo: #8e1b24;          /* bordó, versión menos estridente del rojo del isologo (Pity, 04/11/2026) */
+  --rojo-oscuro: #6e1319;
   --tinta: #1f2a33;         /* gris azulado del texto del logo */
   --texto: #232a30;
   --texto-suave: #5b6670;
@@ -59,8 +59,8 @@ p { margin: 0 0 1em; }
   background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--linea);
 }
-.cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 72px; }
-.cabecera__logo img { height: 48px; width: auto; }
+.cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 80px; }
+.cabecera__logo img { height: 60px; width: auto; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a {
   color: var(--tinta); text-decoration: none; font-weight: 600; font-size: 0.95rem;
@@ -124,7 +124,7 @@ p { margin: 0 0 1em; }
   box-shadow: var(--sombra);
 }
 .tarjeta h3 { margin-top: 6px; }
-.tarjeta .icono { width: 40px; height: 40px; border-radius: 10px; background: #fbe6e7; color: var(--rojo); display: grid; place-items: center; font-weight: 800; }
+.tarjeta .icono { width: 40px; height: 40px; border-radius: 10px; background: #f4e4e6; color: var(--rojo); display: grid; place-items: center; font-weight: 800; }
 .tarjeta--enlace { text-decoration: none; color: inherit; transition: transform 0.12s ease; }
 .tarjeta--enlace:hover { transform: translateY(-2px); color: inherit; }
 
@@ -184,7 +184,7 @@ tr:last-child td { border-bottom: 0; }
   .rotativa__item { grid-template-columns: 1fr; }
   .rotativa__imagen { min-height: 180px; }
   .rotativa__texto { padding: 22px 20px 56px; }
-  .nav { display: none; position: absolute; top: 72px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #fff; border-bottom: 1px solid var(--linea); padding: 10px 16px 16px; }
+  .nav { display: none; position: absolute; top: 80px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #fff; border-bottom: 1px solid var(--linea); padding: 10px 16px 16px; }
   .nav.abierto { display: flex; }
   .nav .boton { margin: 8px 0 0; text-align: center; }
   .nav__toggle { display: inline-block; }
@@ -227,7 +227,7 @@ tr:last-child td { border-bottom: 0; }
 .franja__sep { color: #5b6670; }
 .franja__meta { color: #9aa6b0; }
 .franja .sube { color: #7fd1a0; font-weight: 600; }
-.franja .baja { color: #ff8a8e; font-weight: 600; }
+.franja .baja { color: #e9a7ab; font-weight: 600; }
 @keyframes franja-desplazar { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) { .franja__fila { animation: none; width: auto; } .franja__pista + .franja__pista { display: none; } .franja { overflow-x: auto; } }
 @media (min-width: 1100px) { .franja__fila { animation-duration: 60s; } }
@@ -244,4 +244,4 @@ tr:last-child td { border-bottom: 0; }
 .desplegable__cuerpo img { width: 100%; height: auto; display: block; margin-top: 16px; border-radius: 8px; }
 
 /* Las anclas (#liderar-mejor, #webinar-...) no quedan tapadas por la cabecera fija. */
-section[id], [id^="bio-"], #inscripcion, #datos-practicos { scroll-margin-top: 92px; }
+section[id], [id^="bio-"], #inscripcion, #datos-practicos { scroll-margin-top: 100px; }
