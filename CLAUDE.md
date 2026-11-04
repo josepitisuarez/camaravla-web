@@ -57,6 +57,24 @@ Commitear es seguro; **pushear es publicar**. No es un proyecto "Pages": es un
 Worker con Static Assets, que es el camino actual de Cloudflare.
 
 ## Gotchas
+- **Un enlace con `#ancla` no tiene vista previa propia en WhatsApp**: toma la
+  foto y el título de la página entera. Cada capacitación o noticia que se vaya
+  a compartir necesita **página propia** con sus etiquetas `og:` y su tarjeta
+  en `assets/img/og/` (pasó con el webinar del 16/11/2026: la página
+  `capacitaciones.html` es el índice, cada propuesta externa vive en
+  `capacitaciones/<clave>.html` y se suma a `FIJAS` en `generar-noticias.mjs`
+  para el sitemap). La de García Fraga sigue dentro de `capacitaciones.html`
+  porque ese enlace ya circuló con el formulario.
+- **Una compilación de Cloudflare puede no arrancar nunca** (04/11/2026: el
+  push `e9e09fb` no se publicó en 20 minutos; el push siguiente salió en 30 s
+  y trajo los dos). Si un push no aparece en vivo en dos minutos, antes de
+  buscar errores conviene mirar Deployments en la cuenta de Pity o pushear
+  otro commit.
+- **Paleta:** desde el 04/11/2026 el acento es bordó (`--rojo: #8e1b24`,
+  `--rojo-oscuro: #6e1319`, tinte `#f4e4e6`, rosado sobre fondo oscuro
+  `#e9a7ab`), por pedido de Pity ("menos chillón"); el logo PNG conserva su
+  rojo original. `theme-color` de cada página y el generador de tarjetas
+  usan el mismo bordó. Logo de la cabecera a 60 px, barra de 80 px.
 - **El nombre registral no es el de uso.** IPJ: "Cámara de Industria, Producción
   y Comercio de Villa La Angostura". Uso y costumbre: "Cámara de Comercio,
   Turismo, Industria y Producción". El sitio usa el de uso y pone el registral
@@ -182,6 +200,15 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
 ## Estado actual / pendientes
+- **04/11/2026: webinar de UPatagonia, índice de capacitaciones, bordó.**
+  Publicado el webinar "PyMEs Familiares Neuquinas" (16/11/2026, 19:00, Zoom,
+  Lic. Laura Walther; inscripción en el sitio de UPatagonia) con página
+  propia `capacitaciones/webinar-pymes-familiares` y tarjeta OG; la página
+  Capacitaciones abre con un índice de tarjetas (una por propuesta, con
+  reseña) y el detalle de García Fraga debajo; el inicio muestra una tarjeta
+  negra por capacitación; paleta bordó y logo más grande. Agente de
+  Telegram para que la secretaría cargue contenido: propuesto, Pity lo dejó
+  en stand by.
 - **24/09/2026:** scaffolding + cinco páginas (inicio, institucional,
   observatorio, noticias, contacto) revisables en local. Sin publicar.
 - Pendientes de Pity: requisitos y cuota de
