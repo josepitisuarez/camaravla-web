@@ -60,11 +60,12 @@ p { margin: 0 0 1em; }
   border-bottom: 1px solid var(--linea);
 }
 .cabecera__fila { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 92px; }
+.cabecera__logo { flex-shrink: 0; }
 .cabecera__logo img { height: 72px; width: auto; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a {
   color: var(--tinta); text-decoration: none; font-weight: 600; font-size: 0.95rem;
-  padding: 8px 12px; border-radius: 8px;
+  padding: 8px 12px; border-radius: 8px; white-space: nowrap;
 }
 .nav a:hover, .nav a[aria-current="page"] { background: var(--fondo); color: var(--rojo-oscuro); }
 .nav .boton { margin-left: 8px; }
@@ -172,6 +173,13 @@ tr:last-child td { border-bottom: 0; }
 .pie__logo img { height: 44px; width: auto; filter: brightness(0) invert(1); margin-bottom: 12px; }
 
 /* ---------- responsive ---------- */
+/* El menú completo necesita unos 1030 px (seis secciones y dos botones): por debajo se pliega en "Menú". */
+@media (max-width: 1040px) {
+  .nav { display: none; position: absolute; top: 92px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #fff; border-bottom: 1px solid var(--linea); padding: 10px 16px 16px; }
+  .nav.abierto { display: flex; }
+  .nav .boton { margin: 8px 0 0; text-align: center; }
+  .nav__toggle { display: inline-block; }
+}
 @media (max-width: 900px) {
   .portada__grilla, .grilla-3, .grilla-2, .grilla-4, .noticias, .personas, .pie__grilla { grid-template-columns: 1fr 1fr; }
   .indicadores { grid-template-columns: 1fr 1fr; }
@@ -184,10 +192,6 @@ tr:last-child td { border-bottom: 0; }
   .rotativa__item { grid-template-columns: 1fr; }
   .rotativa__imagen { min-height: 180px; }
   .rotativa__texto { padding: 22px 20px 56px; }
-  .nav { display: none; position: absolute; top: 92px; left: 0; right: 0; flex-direction: column; align-items: stretch; background: #fff; border-bottom: 1px solid var(--linea); padding: 10px 16px 16px; }
-  .nav.abierto { display: flex; }
-  .nav .boton { margin: 8px 0 0; text-align: center; }
-  .nav__toggle { display: inline-block; }
   table { display: block; overflow-x: auto; }
 }
 
@@ -245,3 +249,18 @@ tr:last-child td { border-bottom: 0; }
 
 /* Las anclas (#liderar-mejor, #webinar-...) no quedan tapadas por la cabecera fija. */
 section[id], [id^="bio-"], #inscripcion, #datos-practicos { scroll-margin-top: 112px; }
+
+/* ---------- financiación: una tarjeta por fuente, toda la tarjeta es el enlace (05/11/2026) ---------- */
+.fuentes { margin-top: 24px; align-items: stretch; }
+.fuente { display: flex; flex-direction: column; }
+.fuente .antetitulo { margin-bottom: 4px; }
+.fuente h3 { margin: 0 0 10px; }
+.fuente p.suave { font-size: 0.95rem; }
+.fuente__ir { margin: auto 0 0; font-weight: 700; color: var(--rojo-oscuro); }
+.fuente:hover .fuente__ir { text-decoration: underline; }
+.indice-fuentes { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 0; }
+.indice-fuentes a {
+  display: inline-block; padding: 8px 16px; border: 1px solid var(--linea); border-radius: 999px;
+  background: var(--blanco); color: var(--tinta); text-decoration: none; font-weight: 600; font-size: 0.92rem;
+}
+.indice-fuentes a:hover { border-color: var(--rojo); color: var(--rojo-oscuro); }

@@ -74,7 +74,23 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   `--rojo-oscuro: #6e1319`, tinte `#f4e4e6`, rosado sobre fondo oscuro
   `#e9a7ab`), por pedido de Pity ("menos chillón"); el logo PNG conserva su
   rojo original. `theme-color` de cada página y el generador de tarjetas
-  usan el mismo bordó. Logo de la cabecera a 60 px, barra de 80 px.
+  usan el mismo bordó. Logo de la cabecera a 72 px, barra de 92 px.
+- **Financiación** (`financiacion.html`, 05/11/2026): directorio de fuentes de
+  crédito y garantía, **una tarjeta por fuente y toda la tarjeta es el enlace al
+  sitio oficial**. La Cámara no otorga financiamiento y la página lo dice
+  arriba. **No se escriben montos, tasas, plazos ni cupos**: cambian y los
+  define cada organismo; la tarjeta dice a quién va dirigida la línea y qué
+  financia, resumido del sitio de la fuente. Cada enlace se comprobó el día
+  que se cargó (fecha al pie de la página); al sumar o revisar fuentes,
+  comprobar que respondan y actualizar esa fecha. Para sumar una: copiar un
+  bloque `a.tarjeta.fuente` en el grupo que corresponda (Neuquén, nacionales,
+  garantías). Descartadas por no tener página útil o vigente: Garantizar y
+  FOGANEU (se cubren con la tarjeta de SGR), CNV pymes, líneas nacionales de
+  turismo (las que aparecen son de 2021-2023).
+- **El menú se pliega en "Menú" por debajo de 1040 px** (05/11/2026): con seis
+  secciones y dos botones necesita unos 1030 px; antes el corte era 640 px y
+  entre medio el logo se aplastaba. Si se suma otra sección, medir de nuevo
+  y subir el corte.
 - **El nombre registral no es el de uso.** IPJ: "Cámara de Industria, Producción
   y Comercio de Villa La Angostura". Uso y costumbre: "Cámara de Comercio,
   Turismo, Industria y Producción". El sitio usa el de uso y pone el registral
@@ -200,6 +216,13 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
 ## Estado actual / pendientes
+- **05/11/2026: solapa Financiación.** Pity pidió una solapa que concentre las
+  fuentes de financiamiento, aclarando que la Cámara no otorga crédito, con la
+  difusión de ANIDE e IADEP (Impulso Tecnológico y Fomento a la Economía del
+  Conocimiento). Página nueva con 14 fuentes en tres grupos (Neuquén,
+  nacionales y federales, garantías y trámites previos), entrada en el menú y
+  en el sitemap. **Commit local, sin publicar hasta el OK de Pity** a la lista
+  de fuentes.
 - **04/11/2026: webinar de UPatagonia, índice de capacitaciones, bordó.**
   Publicado el webinar "PyMEs Familiares Neuquinas" (16/11/2026, 19:00, Zoom,
   Lic. Laura Walther; inscripción en el sitio de UPatagonia) con página
