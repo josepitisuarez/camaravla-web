@@ -219,10 +219,11 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
 - **05/11/2026: solapa Financiación.** Pity pidió una solapa que concentre las
   fuentes de financiamiento, aclarando que la Cámara no otorga crédito, con la
   difusión de ANIDE e IADEP (Impulso Tecnológico y Fomento a la Economía del
-  Conocimiento). Página nueva con 14 fuentes en tres grupos (Neuquén,
+  Conocimiento). Página nueva con 13 fuentes en tres grupos (Neuquén,
   nacionales y federales, garantías y trámites previos), entrada en el menú y
-  en el sitemap. **Commit local, sin publicar hasta el OK de Pity** a la lista
-  de fuentes.
+  en el sitemap. Pity dio el OK el mismo día y pidió sacar todo lo de CAME;
+  publicado.
+  (CAME no se lista en Financiación: decisión de Pity, no reponerla.)
 - **04/11/2026: webinar de UPatagonia, índice de capacitaciones, bordó.**
   Publicado el webinar "PyMEs Familiares Neuquinas" (16/11/2026, 19:00, Zoom,
   Lic. Laura Walther; inscripción en el sitio de UPatagonia) con página
