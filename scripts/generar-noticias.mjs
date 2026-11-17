@@ -19,6 +19,23 @@ const MESES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', '
 const fechaLarga = (iso) => { const [a, m, d] = iso.split('-').map(Number); return `${d} de ${MESES[m - 1]} de ${a}`; };
 const escapar = (s) => String(s ?? '').replace(/[&<>"]/g, (ch) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
 
+// Notas largas: `bloques` es una lista de { h } subtítulo · { p } párrafo · { lista } viñetas ·
+// { pasos } lista numerada · { tabla: { columnas, filas } } · { aviso } recuadro · { chico } letra chica.
+// El texto se escapa entero y lo único que se convierte es **negrita**.
+const enLinea = (s) => escapar(s).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+function bloquesHTML(bloques) {
+  return bloques.map((b) => {
+    if (b.h) return `<h2>${enLinea(b.h)}</h2>`;
+    if (b.p) return `<p>${enLinea(b.p)}</p>`;
+    if (b.chico) return `<p class="chico suave">${enLinea(b.chico)}</p>`;
+    if (b.aviso) return `<div class="aviso"><p style="margin:0">${enLinea(b.aviso)}</p></div>`;
+    if (b.lista) return `<ul>${b.lista.map((i) => `<li>${enLinea(i)}</li>`).join('')}</ul>`;
+    if (b.pasos) return `<ol>${b.pasos.map((i) => `<li>${enLinea(i)}</li>`).join('')}</ol>`;
+    if (b.tabla) return `<table><thead><tr>${b.tabla.columnas.map((c) => `<th>${enLinea(c)}</th>`).join('')}</tr></thead><tbody>${b.tabla.filas.map((f) => `<tr>${f.map((c) => `<td>${enLinea(c)}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
+    return '';
+  }).join('\n        ');
+}
+
 // La imagen de la noticia: la que declara, o la tarjeta generada para ella, o la de la Cámara.
 function imagenDe(n) {
   if (n.imagen) return n.imagen;
@@ -63,9 +80,12 @@ function pagina(n) {
       <span class="antetitulo">${escapar(n.etiqueta || 'Noticia')} · ${fechaLarga(n.fecha)}</span>
       <h1>${escapar(n.titulo)}</h1>
       <p class="grande">${escapar(n.resumen)}</p>
-      <img src="../${escapar(imagen)}" alt="" decoding="async" style="width:100%;height:auto;border-radius:10px;margin:18px 0 22px;border:1px solid var(--linea)">
-      ${n.cuerpo ? `<p>${escapar(n.cuerpo)}</p>` : ''}
-      ${fuentes.length ? `<p class="chico suave">${fuentes.length > 1 ? 'Fuentes' : 'Fuente'}: ${fuentes.map((f) => `<a href="${escapar(f.url)}" rel="noopener" target="_blank">${escapar(f.nombre)}</a>`).join(' · ')}</p>` : ''}
+      ${n.imagen ? `<img src="../${escapar(imagen)}" alt="" decoding="async" style="width:100%;height:auto;border-radius:10px;margin:18px 0 22px;border:1px solid var(--linea)">` : ''}
+      ${n.bloques ? `<div class="nota">
+        ${bloquesHTML(n.bloques)}
+        ${fuentes.length ? `<ul>${fuentes.map((f) => `<li><a href="${escapar(f.url)}" rel="noopener" target="_blank">${escapar(f.nombre)}</a></li>`).join('')}</ul>` : ''}
+      </div>` : n.cuerpo ? `<p>${escapar(n.cuerpo)}</p>` : ''}
+      ${n.bloques ? '' : fuentes.length ? `<p class="chico suave">${fuentes.length > 1 ? 'Fuentes' : 'Fuente'}: ${fuentes.map((f) => `<a href="${escapar(f.url)}" rel="noopener" target="_blank">${escapar(f.nombre)}</a>`).join(' · ')}</p>` : ''}
       <p class="chico suave" style="margin-top:28px">Compartí esta nota: <span class="mono">${url}</span></p>
     </div>
   </article>

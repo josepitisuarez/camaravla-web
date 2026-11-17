@@ -264,3 +264,10 @@ section[id], [id^="bio-"], #inscripcion, #datos-practicos { scroll-margin-top: 1
   background: var(--blanco); color: var(--tinta); text-decoration: none; font-weight: 600; font-size: 0.92rem;
 }
 .indice-fuentes a:hover { border-color: var(--rojo); color: var(--rojo-oscuro); }
+
+/* ---------- nota larga de noticias: subtítulos, listas y tablas (17/11/2026) ---------- */
+.nota h2 { font-size: 1.4rem; margin: 36px 0 12px; }
+.nota ul, .nota ol { margin: 0 0 1.1em; padding-left: 24px; }
+.nota li { margin-bottom: 8px; }
+.nota table { margin: 4px 0 1.3em; }
+.nota .aviso { margin: 26px 0 0; }

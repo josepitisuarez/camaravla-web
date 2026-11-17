@@ -216,6 +216,17 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
 ## Estado actual / pendientes
+- **17/11/2026: nota del FAL en Noticias.** Pity escribió la nota "Fondo de
+  Asistencia Laboral (FAL): qué deben hacer los empleadores antes del 1 de
+  diciembre" en un doc de Claude y pidió subirla. Publicada tal cual en
+  `/noticias/2026-11-fondo-asistencia-laboral`, con tarjeta de texto para la
+  vista previa. Para eso las noticias ahora admiten **notas largas**: campo
+  `bloques` en `data/noticias.js` (subtítulos, párrafos, viñetas, pasos
+  numerados, tablas, recuadro; solo `**negrita**` dentro del texto), que el
+  generador convierte a HTML; el listado muestra el resumen y "Leer la nota
+  completa". Una nota sin `imagen` no muestra foto en su página (la tarjeta
+  repetiría el título) pero sí la usa en el listado y en WhatsApp. Las
+  normas y fechas de la nota son de Pity; no se verificaron acá.
 - **05/11/2026: solapa Financiación.** Pity pidió una solapa que concentre las
   fuentes de financiamiento, aclarando que la Cámara no otorga crédito, con la
   difusión de ANIDE e IADEP (Impulso Tecnológico y Fomento a la Economía del

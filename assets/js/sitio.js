@@ -178,7 +178,7 @@
           <h3><a href="${raiz}noticias/${escapar(n.id)}" style="color:inherit;text-decoration:none">${escapar(n.titulo)}</a></h3>
           <p>${escapar(n.resumen)}</p>
           ${n.cuerpo ? `<p>${escapar(n.cuerpo)}</p>` : ""}
-          ${fuentesHTML(n)}
+          ${n.bloques ? `<p><a href="${raiz}noticias/${escapar(n.id)}"><strong>Leer la nota completa →</strong></a></p>` : fuentesHTML(n)}
         </div>
       </article>`).join("");
   }
