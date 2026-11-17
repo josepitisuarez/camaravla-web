@@ -153,7 +153,9 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   texto queda solo como respaldo (`camara.png`). Fotos usadas (número de foto
   en Pexels): ingresos brutos 6256066 (pizarrón con fórmulas; Pity, 29/10: "fórmulas matemáticas genéricas", archivo `-v2` para renovar la caché de WhatsApp) · Congreso 31192612 ·
   ruido 18331431 · estacionalidad 4427225 · Carta Orgánica 261621 · reforma
-  laboral 31353701 · agua 31724660 · asamblea 8761524 · capacitación 3183186.
+  laboral 31353701 · agua 31724660 · asamblea 8761524 · capacitación 3183186 ·
+  nota del FAL 12357530 (mano que pone una moneda en una alcancía; autor ____,
+  la página de Pexels no se dejó leer; Pity pidió "algo alegórico" el 17/11/2026).
   Para una noticia nueva: bajar de Pexels con
   `?auto=compress&cs=tinysrgb&w=1200&h=630&fit=crop`, guardar con el id de la
   noticia, poner `imagen` en `noticias.js`, correr el generador.
@@ -226,7 +228,10 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   generador convierte a HTML; el listado muestra el resumen y "Leer la nota
   completa". Una nota sin `imagen` no muestra foto en su página (la tarjeta
   repetiría el título) pero sí la usa en el listado y en WhatsApp. Las
-  normas y fechas de la nota son de Pity; no se verificaron acá.
+  normas y fechas de la nota son de Pity; no se verificaron acá. El mismo día
+  Pity pidió cambiar la tarjeta de texto por una foto alegórica (Pexels
+  12357530) y el título de la página Noticias pasó de "Lo que la Cámara
+  comunica" a "Te acercamos noticias relevantes".
 - **05/11/2026: solapa Financiación.** Pity pidió una solapa que concentre las
   fuentes de financiamiento, aclarando que la Cámara no otorga crédito, con la
   difusión de ANIDE e IADEP (Impulso Tecnológico y Fomento a la Economía del

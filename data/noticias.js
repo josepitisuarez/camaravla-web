@@ -25,6 +25,7 @@ window.NOTICIAS = [
     id: "2026-11-fondo-asistencia-laboral",
     fecha: "2026-11-17",
     etiqueta: "Laboral",
+    imagen: "assets/img/noticias/2026-11-fondo-asistencia-laboral.jpg",
     titulo: "Fondo de Asistencia Laboral (FAL): qué deben hacer los empleadores antes del 1 de diciembre",
     resumen: "El 1 de diciembre de 2026 entra en vigencia el Fondo de Asistencia Laboral (FAL) y todo empleador privado debe tener elegido el fondo que administrará sus aportes. La Cámara de Comercio, Turismo, Industria y Producción de Villa La Angostura resume en esta nota qué es el régimen, cuánto se aporta y qué pasos conviene dar antes de esa fecha.",
     bloques: [
