@@ -218,6 +218,18 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
 ## Estado actual / pendientes
+- **17/11/2026 (tarde): la capacitación de García Fraga pasa a "realizada".**
+  Pity: "sacá la capacitación de García Fraga porque ya sucedió, citala como ya
+  ocurrida". `capacitaciones.html` quedó con "Próximas capacitaciones" (hoy
+  solo el webinar) y una sección "Capacitaciones realizadas" con una tarjeta
+  por capacitación pasada (fechas, horario, lugar, costo, docente; sin
+  programa ni formulario). Se quitó la tarjeta negra del inicio y el
+  `<script>` de `capacitaciones.js` (el archivo sigue en el repo para la
+  próxima con inscripción en línea). ⬜ El webinar de UPatagonia era el
+  16/11: sigue como "próximo" hasta que Pity confirme que se hizo. ⬜ En el
+  panel de gestión, marcar la capacitación como finalizada: el sitio ya no
+  tiene formulario pero el sistema sigue aceptando inscripciones mientras
+  figure con inscripción abierta.
 - **17/11/2026: nota del FAL en Noticias.** Pity escribió la nota "Fondo de
   Asistencia Laboral (FAL): qué deben hacer los empleadores antes del 1 de
   diciembre" en un doc de Claude y pidió subirla. Publicada tal cual en

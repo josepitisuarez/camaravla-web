@@ -248,7 +248,7 @@ tr:last-child td { border-bottom: 0; }
 .desplegable__cuerpo img { width: 100%; height: auto; display: block; margin-top: 16px; border-radius: 8px; }
 
 /* Las anclas (#liderar-mejor, #webinar-...) no quedan tapadas por la cabecera fija. */
-section[id], [id^="bio-"], #inscripcion, #datos-practicos { scroll-margin-top: 112px; }
+section[id], [id^="bio-"], #inscripcion, #datos-practicos, #liderar-mejor { scroll-margin-top: 112px; }
 
 /* ---------- financiación: una tarjeta por fuente, toda la tarjeta es el enlace (05/11/2026) ---------- */
 .fuentes { margin-top: 24px; align-items: stretch; }
