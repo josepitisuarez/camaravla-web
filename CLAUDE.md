@@ -225,8 +225,16 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   por capacitación pasada (fechas, horario, lugar, costo, docente; sin
   programa ni formulario). Se quitó la tarjeta negra del inicio y el
   `<script>` de `capacitaciones.js` (el archivo sigue en el repo para la
-  próxima con inscripción en línea). ⬜ El webinar de UPatagonia era el
-  16/11: sigue como "próximo" hasta que Pity confirme que se hizo. ⬜ En el
+  próxima con inscripción en línea). **Mismo día, el webinar de UPatagonia
+  (16/11) también pasó a realizadas** ("mismo criterio"): Capacitaciones abre
+  con un aviso de que no hay próximas con fecha y lista las dos realizadas;
+  la página propia del webinar quedó en pasado, sin botón de inscripción ni
+  enlace de Zoom; el globo negro del inicio ahora lleva a Financiación
+  (elección mía para no dejar el hueco; Pity puede pedir otra cosa).
+  **Criterio para lo que sigue: una capacitación pasada no se borra, se
+  mueve a "Capacitaciones realizadas" con sus datos y sin inscripción.**
+  ~~El webinar de UPatagonia era el
+  16/11: sigue como "próximo"~~ ⬜ En el
   panel de gestión, marcar la capacitación como finalizada: el sitio ya no
   tiene formulario pero el sistema sigue aceptando inscripciones mientras
   figure con inscripción abierta.
