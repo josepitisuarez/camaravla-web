@@ -1,7 +1,10 @@
 /* Capacitaciones: los datos prácticos (fechas, lugar, costo, cupo, si la
    inscripción está abierta) se leen del sistema de gestión de la Cámara, así la
    secretaría los completa desde el panel sin tocar el sitio. El formulario se
-   envía al mismo sistema; acá no se guarda nada. */
+   envía al mismo sistema; acá no se guarda nada.
+   Capacitación paga: si el formulario trae data-pago-socio y data-pago-no-socio
+   (links de pago de MercadoPago de la Cámara), al terminar de inscribirse se
+   muestra el que corresponde según la casilla "Soy socio". */
 (function () {
   const esLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
   const API = esLocal ? "http://localhost:3000" : "https://gestion.camaravla.org.ar";
@@ -64,8 +67,13 @@
       });
       const cuerpo = await r.json().catch(() => ({}));
       if (r.ok && cuerpo.ok) {
+        const esSocio = datos.get("es_socio") === "1";
+        const enlacePago = form.getAttribute(esSocio ? "data-pago-socio" : "data-pago-no-socio");
+        const pago = enlacePago
+          ? '<strong>Falta el pago:</strong> <a href="' + escapar(enlacePago) + '" target="_blank" rel="noopener">pagar por MercadoPago como ' + (esSocio ? "socio" : "no socio") + " →</a>. Después mandanos el comprobante a secretariaccvla@gmail.com. "
+          : "";
         form.reset();
-        mostrar("ok", "<strong>Inscripción recibida.</strong> " + (cuerpo.confirmacion_enviada ? "Te mandamos un mail con los datos. " : "") + "Te vamos a confirmar el lugar por WhatsApp. Si tenés dudas, escribinos a secretariaccvla@gmail.com.");
+        mostrar("ok", "<strong>Inscripción recibida.</strong> " + (cuerpo.confirmacion_enviada ? "Te mandamos un mail con los datos. " : "") + pago + "Te vamos a confirmar el lugar por WhatsApp. Si tenés dudas, escribinos a secretariaccvla@gmail.com.");
       } else {
         const errores = Array.isArray(cuerpo.errores) && cuerpo.errores.length ? cuerpo.errores : ["No pudimos registrar la inscripción. Probá de nuevo en unos minutos o escribinos a secretariaccvla@gmail.com."];
         mostrar("error", errores.map(escapar).join(" "));

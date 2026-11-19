@@ -228,8 +228,23 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   el inicio arriba del de Financiación. Foto de Pexels 9409745 (equipo de un
   café; autor ____, la página de Pexels no se dejó leer). ⬜ Cuando pase,
   moverla a "Capacitaciones realizadas" con el criterio del 17/11. ⬜ Cobro
-  con MercadoPago: Pity lo quiere; cinco decisiones pendientes (ver CLAUDE.md
-  de gestion-ccvla).
+  con MercadoPago automático: Pity lo quiere; cinco decisiones pendientes (ver
+  CLAUDE.md de gestion-ccvla). **Mismo día, links de pago (Pity: "y si armamos
+  un link de pago y publicas eso?"):** Pity creó dos links en MercadoPago,
+  comprobados en el navegador: "Taller Socio" $10.000 y "Taller no socio"
+  $15.000, cobrador "Cámara de Comercio VLA". Están en la tarjeta `#pago` de
+  la página del taller (dos botones) y como `data-pago-socio` /
+  `data-pago-no-socio` del formulario: `capacitaciones.js` muestra el que
+  corresponde, según la casilla "Soy socio", en el mensaje de inscripción
+  recibida. Se publica la forma estable
+  `mercadopago.com.ar/checkout/v1/redirect?pref_id=…` y no la dirección que
+  pegó Pity, que era la de una sesión de pago ya abierta. El costo de esta
+  página dejó de leerse del sistema (sin `data-campo="costo"`) porque allá
+  el texto lleva la dirección de la página para el mail. **El pago no se une
+  solo con la inscripción:** secretaría cruza los cobros de MercadoPago con
+  los inscriptos y confirma en el panel. **Al cambiar `capacitaciones.js`,
+  subirle la versión en el `<script src="…?v=N">`**: el JS queda un día en
+  la caché del navegador.
 - **17/11/2026 (tarde): la capacitación de García Fraga pasa a "realizada".**
   Pity: "sacá la capacitación de García Fraga porque ya sucedió, citala como ya
   ocurrida". `capacitaciones.html` quedó con "Próximas capacitaciones" (hoy
