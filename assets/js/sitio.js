@@ -10,6 +10,7 @@
     ["inicio", "Inicio", ""],
     ["institucional", "Institucional", "institucional"],
     ["capacitaciones", "Capacitaciones", "capacitaciones"],
+    ["empleo", "Empleo", "empleo"],
     ["financiacion", "Financiación", "financiacion"],
     ["noticias", "Noticias", "noticias"],
     ["contacto", "Contacto", "contacto"],

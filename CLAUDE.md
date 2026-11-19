@@ -87,6 +87,7 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   garantías). Descartadas por no tener página útil o vigente: Garantizar y
   FOGANEU (se cubren con la tarjeta de SGR), CNV pymes, líneas nacionales de
   turismo (las que aparecen son de 2021-2023).
+- **Desde el 19/11/2026 el menú tiene siete ítems (se sumó Empleo) y se pliega por debajo de 1160 px**; la nota que sigue es la historia del corte anterior.
 - **El menú se pliega en "Menú" por debajo de 1040 px** (05/11/2026): con seis
   secciones y dos botones necesita unos 1030 px; antes el corte era 640 px y
   entre medio el logo se aplastaba. Si se suma otra sección, medir de nuevo
@@ -218,6 +219,15 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
 ## Estado actual / pendientes
+- **19/11/2026 (tarde): página Empleo, commiteada en local y SIN PUBLICAR.**
+  `empleo.html` (Bolsa de trabajo) con dos entradas, "Busco trabajo" y "Busco
+  personal", y las ofertas vigentes que `assets/js/empleo.js` lee de
+  `https://socios.camaravla.org.ar/empleo/ofertas.json`. El CV, la
+  postulación y la publicación de ofertas viven en el sistema de gestión
+  (ver su CLAUDE.md y `docs/diseno/empleo.md`). Ítem "Empleo" en el menú y
+  en el mapa del sitio. ⬜ **Publicar recién después de desplegar el sistema
+  con la migración 022**, con OK de Pity: antes, la página diría que no pudo
+  cargar las ofertas.
 - **19/11/2026: taller de Cintia Lucía Giovanon, jueves 26/11/2026, 14 a 16 hs.**
   "El problema no es el empleado: es cómo lo elegimos" (propuesta en docx del
   19/11; Pity: sede de la Cámara, $10.000 socios y $15.000 no socios, cupo 40,
