@@ -218,6 +218,18 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
 ## Estado actual / pendientes
+- **19/11/2026: taller de Cintia Lucía Giovanon, jueves 26/11/2026, 14 a 16 hs.**
+  "El problema no es el empleado: es cómo lo elegimos" (propuesta en docx del
+  19/11; Pity: sede de la Cámara, $10.000 socios y $15.000 no socios, cupo 40,
+  inscripción por el formulario del sistema). Página propia
+  `capacitaciones/equipos-que-funcionan` con programa, ficha, facilitadora y
+  formulario (clave `equipos-que-funcionan-2026-11`, dada de alta en producción
+  el mismo día); tarjeta con foto en "Próximas capacitaciones"; globo negro en
+  el inicio arriba del de Financiación. Foto de Pexels 9409745 (equipo de un
+  café; autor ____, la página de Pexels no se dejó leer). ⬜ Cuando pase,
+  moverla a "Capacitaciones realizadas" con el criterio del 17/11. ⬜ Cobro
+  con MercadoPago: Pity lo quiere; cinco decisiones pendientes (ver CLAUDE.md
+  de gestion-ccvla).
 - **17/11/2026 (tarde): la capacitación de García Fraga pasa a "realizada".**
   Pity: "sacá la capacitación de García Fraga porque ya sucedió, citala como ya
   ocurrida". `capacitaciones.html` quedó con "Próximas capacitaciones" (hoy
