@@ -219,15 +219,15 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   caído. Si sigue registrado a nombre de la Cámara, redirigirlo acá.
 
 ## Estado actual / pendientes
-- **19/11/2026 (tarde): página Empleo, commiteada en local y SIN PUBLICAR.**
+- **19/11/2026 (tarde): página Empleo, PUBLICADA** (Pity: "perfecto
+  publicalo"), después de desplegar el sistema con la migración 022.
   `empleo.html` (Bolsa de trabajo) con dos entradas, "Busco trabajo" y "Busco
   personal", y las ofertas vigentes que `assets/js/empleo.js` lee de
   `https://socios.camaravla.org.ar/empleo/ofertas.json`. El CV, la
   postulación y la publicación de ofertas viven en el sistema de gestión
   (ver su CLAUDE.md y `docs/diseno/empleo.md`). Ítem "Empleo" en el menú y
-  en el mapa del sitio. ⬜ **Publicar recién después de desplegar el sistema
-  con la migración 022**, con OK de Pity: antes, la página diría que no pudo
-  cargar las ofertas.
+  en el mapa del sitio. Si el sistema no responde, la página dice que no
+  pudo cargar las ofertas y enlaza a la bolsa.
 - **19/11/2026: taller de Cintia Lucía Giovanon, jueves 26/11/2026, 14 a 16 hs.**
   "El problema no es el empleado: es cómo lo elegimos" (propuesta en docx del
   19/11; Pity: sede de la Cámara, $10.000 socios y $15.000 no socios, cupo 40,
