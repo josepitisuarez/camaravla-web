@@ -252,9 +252,11 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   formulario lleva `data-bono` (reemplaza a `data-pago-socio` y
   `data-pago-no-socio`) y el mensaje de inscripción invita a aportar. Pity no
   dijo si el bono es obligatorio para asistir: el sitio no afirma ni una cosa
-  ni la otra. ⬜ El link de $10.000 se sigue llamando "Taller Socio" en
-  MercadoPago; conviene renombrarlo o reemplazarlo por uno titulado "Bono
-  contribución".
+  ni la otra. **Link definitivo (Pity, mismo día): `https://mpago.la/25MqonR`**,
+  comprobado en el navegador: "Contribución Taller" $10.000, cobrador "Cámara
+  de Comercio VLA". Reemplaza al de "Taller Socio" en el botón y en
+  `data-bono`; los dos links viejos ("Taller Socio" y "Taller no socio") ya
+  no se publican.
 - **17/11/2026 (tarde): la capacitación de García Fraga pasa a "realizada".**
   Pity: "sacá la capacitación de García Fraga porque ya sucedió, citala como ya
   ocurrida". `capacitaciones.html` quedó con "Próximas capacitaciones" (hoy
