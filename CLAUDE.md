@@ -87,6 +87,7 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   garantías). Descartadas por no tener página útil o vigente: Garantizar y
   FOGANEU (se cubren con la tarjeta de SGR), CNV pymes, líneas nacionales de
   turismo (las que aparecen son de 2021-2023).
+- **`estilos.css` y `sitio.js` llevan versión en su dirección (`?v=AAAAMMDD`) en todas las páginas** (19/11/2026). El navegador guarda el CSS y el JS un día (`_headers`), así que sin versión quien ya visitó el sitio sigue viendo el menú y los estilos viejos: pasó al sumar Empleo, que no aparecía en el menú. **Cada vez que cambie uno de los dos: `node scripts/version-recursos.mjs`** (pone la fecha de hoy en las páginas y en la plantilla de `generar-noticias.mjs`) y commitear todo junto. Los demás scripts (`capacitaciones.js`, `empleo.js`) se versionan a mano en la página que los usa.
 - **Desde el 19/11/2026 el menú tiene siete ítems (se sumó Empleo) y se pliega por debajo de 1160 px**; la nota que sigue es la historia del corte anterior.
 - **El menú se pliega en "Menú" por debajo de 1040 px** (05/11/2026): con seis
   secciones y dos botones necesita unos 1030 px; antes el corte era 640 px y

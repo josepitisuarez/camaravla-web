@@ -68,7 +68,7 @@ function pagina(n) {
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="../assets/img/logo.png">
   <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/estilos.css">
+  <link rel="stylesheet" href="../assets/css/estilos.css?v=20261119">
 </head>
 <body>
 <div data-cabecera></div>
@@ -92,7 +92,7 @@ function pagina(n) {
 </main>
 
 <div data-pie></div>
-<script src="../assets/js/sitio.js"></script>
+<script src="../assets/js/sitio.js?v=20261119"></script>
 </body>
 </html>
 `;
