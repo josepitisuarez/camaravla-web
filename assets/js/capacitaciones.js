@@ -2,9 +2,8 @@
    inscripción está abierta) se leen del sistema de gestión de la Cámara, así la
    secretaría los completa desde el panel sin tocar el sitio. El formulario se
    envía al mismo sistema; acá no se guarda nada.
-   Capacitación paga: si el formulario trae data-pago-socio y data-pago-no-socio
-   (links de pago de MercadoPago de la Cámara), al terminar de inscribirse se
-   muestra el que corresponde según la casilla "Soy socio". */
+   Bono contribución: si el formulario trae data-bono (link de pago de MercadoPago
+   de la Cámara), al terminar de inscribirse se invita a aportar con ese link. */
 (function () {
   const esLocal = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
   const API = esLocal ? "http://localhost:3000" : "https://gestion.camaravla.org.ar";
@@ -67,10 +66,9 @@
       });
       const cuerpo = await r.json().catch(() => ({}));
       if (r.ok && cuerpo.ok) {
-        const esSocio = datos.get("es_socio") === "1";
-        const enlacePago = form.getAttribute(esSocio ? "data-pago-socio" : "data-pago-no-socio");
-        const pago = enlacePago
-          ? '<strong>Falta el pago:</strong> <a href="' + escapar(enlacePago) + '" target="_blank" rel="noopener">pagar por MercadoPago como ' + (esSocio ? "socio" : "no socio") + " →</a>. Después mandanos el comprobante a secretariaccvla@gmail.com. "
+        const bono = form.getAttribute("data-bono");
+        const pago = bono
+          ? 'Para seguir realizando esta clase de capacitaciones, nos podés apoyar con un bono contribución: <a href="' + escapar(bono) + '" target="_blank" rel="noopener"><strong>aportar por MercadoPago →</strong></a>. '
           : "";
         form.reset();
         mostrar("ok", "<strong>Inscripción recibida.</strong> " + (cuerpo.confirmacion_enviada ? "Te mandamos un mail con los datos. " : "") + pago + "Te vamos a confirmar el lugar por WhatsApp. Si tenés dudas, escribinos a secretariaccvla@gmail.com.");

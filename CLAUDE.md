@@ -244,7 +244,17 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   solo con la inscripción:** secretaría cruza los cobros de MercadoPago con
   los inscriptos y confirma en el panel. **Al cambiar `capacitaciones.js`,
   subirle la versión en el `<script src="…?v=N">`**: el JS queda un día en
-  la caché del navegador.
+  la caché del navegador. **Más tarde, bono contribución (Pity: "pongamos
+  una contribución de 10.000 general, con el link de 10.000", con el texto
+  "para seguir realizando esta clase de capacitaciones nos podés apoyar con
+  un bono contribución"):** se quitaron los dos precios y el link de $15.000;
+  la tarjeta `#pago` se titula "Bono contribución" y tiene un solo botón; el
+  formulario lleva `data-bono` (reemplaza a `data-pago-socio` y
+  `data-pago-no-socio`) y el mensaje de inscripción invita a aportar. Pity no
+  dijo si el bono es obligatorio para asistir: el sitio no afirma ni una cosa
+  ni la otra. ⬜ El link de $10.000 se sigue llamando "Taller Socio" en
+  MercadoPago; conviene renombrarlo o reemplazarlo por uno titulado "Bono
+  contribución".
 - **17/11/2026 (tarde): la capacitación de García Fraga pasa a "realizada".**
   Pity: "sacá la capacitación de García Fraga porque ya sucedió, citala como ya
   ocurrida". `capacitaciones.html` quedó con "Próximas capacitaciones" (hoy
