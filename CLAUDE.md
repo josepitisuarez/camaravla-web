@@ -225,8 +225,13 @@ Worker con Static Assets, que es el camino actual de Cloudflare.
   `capacitaciones/equipos-que-funcionan` con programa, ficha, facilitadora y
   formulario (clave `equipos-que-funcionan-2026-11`, dada de alta en producción
   el mismo día); tarjeta con foto en "Próximas capacitaciones"; globo negro en
-  el inicio arriba del de Financiación. Foto de Pexels 9409745 (equipo de un
-  café; autor ____, la página de Pexels no se dejó leer). ⬜ Cuando pase,
+  el inicio arriba del de Financiación. **Imagen (Pity, 19/11, "usemos esta
+  imagen, está mucho más linda"):** una mano que elige una figura azul entre
+  figuras de madera, mandada por Pity en el chat y recortada a 1200 × 630
+  (`equipos-que-funcionan-eleccion.jpg`; origen y licencia de la imagen:
+  ____). Reemplazó a la foto de Pexels 9409745, que se borró del repo. Se
+  le puso nombre nuevo porque las imágenes quedan una semana en la caché del
+  navegador. ⬜ Cuando pase,
   moverla a "Capacitaciones realizadas" con el criterio del 17/11. ⬜ Cobro
   con MercadoPago automático: Pity lo quiere; cinco decisiones pendientes (ver
   CLAUDE.md de gestion-ccvla). **Mismo día, links de pago (Pity: "y si armamos
